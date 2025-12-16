@@ -5,6 +5,7 @@ This includes daily updates of CCNP Enterprise's Labs and Theories.
 
 # Day 1 (Static Route with AD Tuning)
 ![Day 1 UI](https://github.com/Htin2001/CCNP-Enterprise-/blob/ee511024c0821c6bcac03a9a09ce0bf263574e98/Day%201.png)
+Download file: (https://github.com/Htin2001/CCNP-Enterprise/blob/b4982b4bb50f1f06aee14f70cde97288cf18304d/Path%20Determination%20(Htin%20Aung%20Lin).pkt)
 
 According to this lab, we want to make a connection between PC_0 and PC_1 and we use static routes for all routers and setting AD number - 2 for the backup route which is also called AD Tuning. 
 
