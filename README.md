@@ -127,4 +127,4 @@ For Interfaces between each router
 `ip rip authentication key-chain (Key Chain Name)` 
 
 
-***According to our lab, we set up RIP v2 routing on all routers (R1,R2,R3) and we set authentication mode on between R2 and R3. And also we set R2's ethernet 0/0 interface as passive interface. At this point R3 stills get routing updates from R1 like (10.0.0.0/30 and 192.168.1.0/24 which can be regarded as loopback and if R1 is a external untrusted network, R3 will become a problem with huge memories. To advoid this we write access-list in R3 router which can see in the Day 2 lab picture.***
+***According to our lab, we set up RIP v2 routing on all routers (R1,R2,R3) and we set authentication mode on between R2 and R3. And also we set R2's ethernet 0/0 interface as passive interface. At this point R3 stills get routing updates from R1 like (10.0.0.0/30 and 192.168.1.0/24 which can be regarded as loopback and if R1 is a external untrusted network, R3 will become a problem with huge memories. To advoid this we write access-list in R3 router which can see in the Day 2 lab picture or set R2's ethernet0/0 interface as RIP v2 authentication.***
