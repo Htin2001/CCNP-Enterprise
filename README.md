@@ -189,6 +189,14 @@ For Interfaces between each router
 
 
 - According to the upper Redistribution diagram, Router B is processing on redistribion which means it has both RIP and OSPF routes.
+- If you want filter some routes in **OSPF** which going to RIP,the flow will
+  `router rip`
+  `distribution-list (no.) (in or out) ospf 1`
+- If you want filter some routes in **RIP** which going to OSPF, the flow will
+  `router ospf 1`
+  `distribution-list (no.) (in or out) rip`
+- **Before doing the distribution, we need to write the ACL (Access List) to permit or deny**
+  
 
 
 ----------------------------------------
