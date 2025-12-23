@@ -184,9 +184,12 @@ For Interfaces between each router
 - Use with **an access list or route map or prefix-list** to permit or deny routes
 - Can be applied to **transmitted, received, or redistributed routing updates**
 
-**Filtering Routing Updates with a Distribute List**
+![Day 3 Filtering Routing Updates with a Distribute List](https://github.com/Htin2001/CCNP-Enterprise/blob/7814a477e2f2bd14b402f9ba0e97ed768f3bef55/Filtering%20routing%20updates%20with%20a%20distributed%20list.png)
 
-![Day 3 Filtering Routing Updates with a Distribute List](https://github.com/Htin2001/CCNP-Enterprise/blob/056fd812abb74d71660b0a6dd809fbb09568a7f5/Path%20Determination%20(Htin%20Aung%20Lin).pkt)
+
+
+- According to the upper Redistribution diagram, Router B is processing on redistribion which means it has both RIP and OSPF routes.
+
 
 ----------------------------------------
 **Running Passive Interface in EIGRP**
