@@ -152,7 +152,7 @@ For Interfaces between each router
 **Different types for controlling routing update traffic**
 
 - Passive Interface
-  - Passive - interface command is used in all routing protocols to **disable sending updates**      out from a specific interface. Since RIPv2           **doesn’t send ‘Hello packets’**, passive interface only work on RIPv2 not for RIPv1.
+  - Passive - interface command is used in all routing protocols to **disable sending updates** out from a specific interface. Since RIPv2        **doesn’t send ‘Hello packets’**, passive interface only work on RIPv2 not for RIPv1.
 - Distribution-lists
 - IP - Prefix -list
 - Route - maps
@@ -202,8 +202,6 @@ For Interfaces between each router
 `passive-interface (interface name)`
 
 `debug ip ospf events` (Checking ospf packets)
-
-
 
 **If you want to close all physical and logical interfaces in router, the command is** 
 
