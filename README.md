@@ -226,4 +226,14 @@ For Interfaces between each router
 
 `no passive-interface (interface-name)` 
 
+**Filtering Routing updates with a Distribute List** 
+
+- At this point we need to use distribute-list with ACL
+
+`access-list (no.) (permit or deny) (network-id) (wildcard mask)`
+
+`distribute-list (access-list's no.) (in or out) (interface-name)`
+
+
+
 
