@@ -186,7 +186,7 @@ For Interfaces between each router
 
 **Filtering Routing Updates with a Distribute List**
 
-![Day 3 Filtering Routing Updates with a Distribute List]
+![Day 3 Filtering Routing Updates with a Distribute List](https://github.com/Htin2001/CCNP-Enterprise/blob/056fd812abb74d71660b0a6dd809fbb09568a7f5/Path%20Determination%20(Htin%20Aung%20Lin).pkt)
 
 ----------------------------------------
 **Running Passive Interface in EIGRP**
