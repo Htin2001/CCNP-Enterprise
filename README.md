@@ -76,6 +76,8 @@ On day 2, we discussed about the details of RIP routing protocol.
 
 **Even though RIP v1 (Classfull) and RIP v2 (Classless) support auto summarization, we have to write < no auto-summary > command when we use classless in our network. If not routing will become a problem.**
 
+----------------------------------------
+
 **RIP Command**
 
 `router rip`
@@ -187,6 +189,7 @@ For Interfaces between each router
 ![Day 3 Filtering Routing Updates with a Distribute List](https://github.com/Htin2001/CCNP-Enterprise/blob/7814a477e2f2bd14b402f9ba0e97ed768f3bef55/Filtering%20routing%20updates%20with%20a%20distributed%20list.png)
 
 
+![Day 3 Controlling Redistribution with Distribute List](https://github.com/Htin2001/CCNP-Enterprise/blob/dc83ccc43c2d7f1239dacf597eac8a0b9f84febc/Controlling%20Redistribution%20with%20Distribute%20lists%20.png)
 
 - According to the upper Redistribution diagram, Router B is processing on redistribion which means it has both RIP and OSPF routes.
 - If you want filter some routes in **OSPF** which going to RIP,the flow will
@@ -197,7 +200,6 @@ For Interfaces between each router
   `distribution-list (no.) (in or out) rip`
 - **Before doing the distribution, we need to write the ACL (Access List) to permit or deny**
   
-
 
 ----------------------------------------
 **Running Passive Interface in EIGRP**
