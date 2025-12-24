@@ -154,7 +154,7 @@ For Interfaces between each router
 **Different types for controlling routing update traffic**
 
 - Passive Interface
-  - Passive - interface command is used in all routing protocols to **disable sending updates**      out from a specific interface. Since RIPv2 **doesn’t send ‘Hello packets’**, passive             interface only work on RIPv2 not for RIPv1.
+  - Passive - interface command is used in all routing protocols to **disable sending updates**      out from a specific interface. RIPv2 **doesn’t send ‘Hello packets’**
 - Distribution-lists
 - IP - Prefix -list
 - Route - maps
