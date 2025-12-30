@@ -269,6 +269,11 @@ For Interfaces between each router
     - **10.0.0.0/16 le 16 (10 . 0 . x . x / le 16)**
 
 
+**Offset-list**
+
+- An offset-list is a way to increase the metric of routes
+- Only RIP and EIGRP support offset-list
+
 **Prefix-list Command** 
 
 `ip prefix-list (name) (seq no.) (permit or deny) (network with subnet or two components)` 
