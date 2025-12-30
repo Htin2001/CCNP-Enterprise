@@ -241,7 +241,7 @@ For Interfaces between each router
 
 # Day 4 (Prefix-List | Offset-list)
 
-- Prefix-list is used when it is difficult to write with the access-list. If we need to write 5    access-list commands, we only need to write only **one or two commands** when we use prefix-     list
+- Prefix-list is used when it is difficult to write with the access-list. If we need to write 5    access-list commands, we only need to write only **one or two commands** when we use    prefix-list
 - The IOS IP prefix-list another tool for matching routes
 - The command then sets either a deny or permit action for each matched prefix / length
 - Match **two components** of an IP route
