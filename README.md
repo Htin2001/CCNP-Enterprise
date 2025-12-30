@@ -241,6 +241,8 @@ For Interfaces between each router
 
 # Day 4 (Prefix-List | Offset-list)
 
+![Day 4 prefix-list](https://github.com/Htin2001/CCNP-Enterprise/blob/125e6fd01ccb493c4c41022abe53839ddab3a0d1/prefix-list.png)
+
 - Prefix-list is used when it is difficult to write with the access-list. If we need to write 5    access-list commands, we only need to write only **one or two commands** when we use    prefix-list
 - The IOS IP prefix-list another tool for matching routes
 - The command then sets either a deny or permit action for each matched prefix / length
