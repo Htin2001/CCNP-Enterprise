@@ -241,9 +241,9 @@ For Interfaces between each router
 
 # Day 4 (Prefix-List | Offset-list)
 
-**Download prefix-list lab file (EVE file)**
-
 ![Day 4 prefix-list](https://github.com/Htin2001/CCNP-Enterprise/blob/125e6fd01ccb493c4c41022abe53839ddab3a0d1/prefix-list.png)
+
+**Download prefix-list lab file (EVE file)**
 
 [Day 4 prefix-list lab](https://github.com/Htin2001/CCNP-Enterprise/blob/b0f96b534eb3e8c68b56914cf7853fd18aa28ffc/Prefix-list%20lab.zip)
 
@@ -271,18 +271,19 @@ For Interfaces between each router
 
 **Offset-list**
 
+- Picture
+
 **Download offset-list Lab (EVE file)** 
 
 - File
 
-- Picture
-
-- According to the picture, traffic from R1 (source router) to Loopback 1, Loopback 2, and Loopback 3 (destination networks: 15.0.0.0/24,
-  15.1.0.0/24, and 15.2.0.0/24) normally passes through the 11.0.0.0/30, 11.0.0.4/30, and 12.0.0.0/30 networks because the upper path has a lower hop   count and is therefore preferred by RIP. However, in this lab, an offset list is configured to increase the hop count of routes learned via the       11.x.x.x networks, making the upper serial path less preferred. As a result, traffic is forced to use the lower path through the 10.x.x.x networks.   Additionally, the lower path uses Ethernet links, which provide higher bandwidth and lower latency compared to the upper serial links, making it a    more desirable path from a performance perspective despite having more hops. 
+  - According to the picture, traffic from R1 (source router) to Loopback 1, Loopback 2, and Loopback 3 (destination networks: 15.0.0.0/24,
+    15.1.0.0/24, and 15.2.0.0/24) normally passes through the 11.0.0.0/30, 11.0.0.4/30, and 12.0.0.0/30 networks because the upper path has a lower       hop   count and is therefore preferred by RIP. However, in this lab, an offset list is configured to increase the hop count of routes learned via     the       11.x.x.x networks, making the upper serial path less preferred. As a result, traffic is forced to use the lower path through the            10.x.x.x networks.   Additionally, the lower path uses Ethernet links, which provide higher bandwidth and lower latency compared to the upper         serial links, making it a    more desirable path from a performance perspective despite having more hops. 
 
 - An offset-list is a way to increase the metric of routes
 - Only **RIP and EIGRP** support offset-list
-
+- One thing we have to note that the best route will be chosen over the **lowest metric (RIP) or delay value (EIGRP)**
+- Offest-list only works with access-list 
 
 ----------------------------------------
 **Prefix-list Command** 
