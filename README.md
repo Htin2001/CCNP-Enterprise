@@ -241,7 +241,16 @@ For Interfaces between each router
 
 # Day 4 (Prefix-List | Offset-list)
 
+**Download prefix-list lab file (EVE file)**
+
 ![Day 4 prefix-list](https://github.com/Htin2001/CCNP-Enterprise/blob/125e6fd01ccb493c4c41022abe53839ddab3a0d1/prefix-list.png)
+
+[Day 4 prefix-list lab](https://github.com/Htin2001/CCNP-Enterprise/blob/b0f96b534eb3e8c68b56914cf7853fd18aa28ffc/Prefix-list%20lab.zip)
+
+- In this lab, we only allow to enter ( 10.0.0.0 / 18 - 20 ) in Nancy's router from Karen. We ran prefix-list command in Nancy's router. 
+
+**Prefix-list**
+
 
 - Prefix-list is used when it is difficult to write with the access-list. If we need to write 5    access-list commands, we only need to write only **one or two commands** when we use    prefix-list
 - The IOS IP prefix-list another tool for matching routes
