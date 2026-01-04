@@ -271,7 +271,7 @@ For Interfaces between each router
 
 **Offset-list**
 
-- Picture
+![Day 4 Offset-list](https://github.com/Htin2001/CCNP-Enterprise/blob/8dfccaa0fe9bcb5f07a4cf47238e0d96e6d35515/Offset-list.png)
 
 **Download offset-list Lab (EVE file)** 
 
