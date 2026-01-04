@@ -287,6 +287,9 @@ For Interfaces between each router
 
 **VRF Lite (Virtual Routing and Forwarding)** 
 
+![Day 4 without VRF](https://github.com/Htin2001/CCNP-Enterprise/blob/2b5d96e63a6583d0567ee1daffb71e3f59f5457a/without%20vrf.png)
+
+
 - Virtual routing and forwarding is a technology that creates separate virtual routers on a        physical **router** which means there will become a separate routing table which is also like    VLAN.
 - VRFs are commonly used for MPLS deployments (Layer 3 VPN), when we use VRFs without MPLS then    we call it VRF lite. 
 
