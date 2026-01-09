@@ -400,7 +400,8 @@ For Interfaces between each router
     [Day 5 PBR Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/aa81e545546016f4eb6da00c7faa74870f3627dd/Day%205%20PBR%20Lab.zip) 
 
     <img width="696" height="472" alt="image" src="https://github.com/user-attachments/assets/19e58a7c-a95b-4813-933f-94adac9a4ee4" />
-    - According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
+
+      - According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
       
       - `int e0/0`
      
@@ -413,7 +414,7 @@ For Interfaces between each router
         - Different users can go from different directions
         - Load sharing
         - PBR will implemented on the **incoming direction of the source interface**
-        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with           permit action**
+        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses            only with permit action**
         - If the packet is match in the route map and route map deny packet will be forwarded according to normal routing table
 
   
@@ -438,6 +439,9 @@ For Interfaces between each router
 
 `sh route-map (route-map name)` 
 
+**Checking PBR with debug** 
+
+`debug ip policy` 
 
 **Checking interface excluding unassigned interfaces**
 
