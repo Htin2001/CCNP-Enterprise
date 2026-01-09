@@ -376,7 +376,7 @@ For Interfaces between each router
 - They offer top-down processing
 - Lines are sequence-numbered for easier editing
 - Route maps are named rather than numbered for easier documentation
-- Match criteria and set criteria can be used, similar to the “if, then” logic in a scripting      language
+- Match criteria and set criteria can be used, similar to the “if, then” logic in a scripting language
 - **Match** criteria used with **ACL & Prefix-list** while **set** criteria used with **action**
 - The common uses of route-maps are as follows:
   - Redistribution route filtering
@@ -400,7 +400,11 @@ For Interfaces between each router
     [Day 5 PBR Lab File]
 
     <img width="696" height="472" alt="image" src="https://github.com/user-attachments/assets/19e58a7c-a95b-4813-933f-94adac9a4ee4" />
-
+    - According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
+      
+      - `int e0/0`
+     
+      - `ip policy route-map (route-map's name)`
     
     - It is used for implementing policy that cause the packet to take a different direction
     - PBR allows **source** based routing
@@ -409,7 +413,7 @@ For Interfaces between each router
         - Different users can go from different directions
         - Load sharing
         - PBR will implemented on the **incoming direction of the source interface**
-        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with permit                action**
+        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with           permit action**
         - If the packet is match in the route map and route map deny packet will be forwarded according to normal routing table
 
   
