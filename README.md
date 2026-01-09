@@ -381,6 +381,14 @@ For Interfaces between each router
 - The common uses of route-maps are as follows:
   - Redistribution route filtering
     <img width="902" height="447" alt="image" src="https://github.com/user-attachments/assets/7387e645-418d-43de-8595-9d5b1bd01030" />
+    - According to the image, RIP routes entering into OSPF routes, we need to make                    ***Redistribution RIP routes*** into OSPF routes in router R3.
+    
+    - `router ospf 1`
+   
+    - `no redistribute rip subnets`
+   
+    - `redistribute rip subnets route-map (route-map's name)`
+
   - Policy-based routing
   - BGP policy implementation
 
@@ -397,7 +405,16 @@ For Interfaces between each router
 
 `set (.....)` 
 
-- (....) has `metric (metric number)` / `ip next hop (next-hop ip)` / `interface (interface_name)` 
+- (....) has `metric (metric number)` / `ip next hop (next-hop ip)` / `interface (interface_name)`
+
+**Checking route-map** 
+
+`sh route-map (route-map name)` 
+
+
+**Checking interface excluding unassigned interfaces**
+
+`sh ip interface brief | exclude unassigned`
 
 
 
