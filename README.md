@@ -397,7 +397,7 @@ For Interfaces between each router
 
     **Download PBR Lab File (EVE File)**
  
-    [Day 5 PBR Lab File]
+    [Day 5 PBR Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/aa81e545546016f4eb6da00c7faa74870f3627dd/Day%205%20PBR%20Lab.zip) 
 
     <img width="696" height="472" alt="image" src="https://github.com/user-attachments/assets/19e58a7c-a95b-4813-933f-94adac9a4ee4" />
     - According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
