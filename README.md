@@ -55,7 +55,7 @@ On day 2, we discussed about the details of RIP routing protocol.
 - Classless routing protocol
 - Supports VLSM
 - Supports authentication
-- Uses multicast address 224.0.0.9
+- Uses multicast address **224.0.0.9**
 
 **Adv of RIP**
 
@@ -414,14 +414,11 @@ For Interfaces between each router
         - Different users can go from different directions
         - Load sharing
         - PBR will implemented on the **incoming direction of the source interface**
-        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses            only with permit action**
+        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with permit action**
         - If the packet is match in the route map and route map deny packet will be forwarded according to normal routing table
 
   
   - BGP policy implementation
-
-
-
 
 
 ----------------------------------------
@@ -457,12 +454,10 @@ For Interfaces between each router
 - Classless
 - Supports FLSM, VLSM, CIDR and Manual summary
 - Incremental updates (hello = 10 sec dead = 40sec) which means that updates are happened during changes
-- Updates are sent as multicast (224.0.0.5 & 224.0.0.6)
-<summary>
-Metric = Cost (Reference Bandwidth / Interface Bandwidth)
-</summary>
+- Updates are sent as multicast (224.0.0.5 & 224.0.0.6) 
+- Metric = Cost (Reference Bandwidth / Interface Bandwidth)
  
-    - Cost = Reference BW / Interface BW
+    - Cost = Reference BW / Interface BW 
  
     - Reference BW = 100
     
@@ -472,15 +467,172 @@ Metric = Cost (Reference Bandwidth / Interface Bandwidth)
     
     - Gigabitethernet Cost = 100 / 1000 = 1000
     
-      - **Noted that if there are two fastethernet and gigabitethernet, we need to config Reference BW in interface in OSPF**  
+      - **Noted that if there are two fastethernet and gigabitethernet, we need to config Reference BW in interface in OSPF**
     
 - Administrative distance = 10
 - Load balancing via 4 equal cost paths by default (unequal cost load balancing not supported)
 - Hierarchical network design using Areas
 
 
+<details>
+<summary><strong>OSPF 7 Stages</strong></summary>
+
+<details>
+<summary>Down</summary>
+
+- Situation before nothing happen
+- Situation become happening down state after happening full state
+
+</details>
+
+<details>
+<summary>INIT</summary>
+ 
+- Situation sending (Hello Packets)
+
+<img width="300" height="400" alt="image" src="https://github.com/user-attachments/assets/57eab74f-b1f9-4c89-8af1-9b3359e25c1b" />
+
+- According to the image, * should be the same when sending (Hello Packets)
+- Sending Hello packets with multicast address (**224.0.0.5 or 224.0.0.6**) from source to destination
+- Receiving Hello packets with unicast address from destination to source
+
+</details>
+
+<details>
+<summary>2-Way</summary>
+
+- Situation of happening Neighbors
+
+</details>
 
 
+<details>
+<summary>Exstart</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>Exchange</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>Loading</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>Full</summary>
+
+
+
+</details>
+
+</details>
+
+
+<details> 
+<summary> <strong> OSPF Packet Type</strong></summary>
+
+<details>
+<summary>Hello</summary>
+
+
+
+</details>
+
+<details>
+<summary>LSA (Link State Advertisement) = Update Packet</summary>
+
+- Type 1 - Router LSAs (Updates in same areas)
+- Type 2 - Network LSAs (having DR & BDR)
+- Type 3 - Summary LSAs (Updates from different areas)
+- Type 4 - Summary ASBR LSAs (LSAs which describe ASBR location)
+- Type 5 - Autonomous system external LSAs (Redistributed Routes)
+- Type 6 - Multicast OSPF LSA
+- Type 7 - Special Area or Stub area (Define for not-so-stubby areas)
+- Type 8 - External attributes LSA for BGP
+- Type 9 / 10 / 11 - Opaque LSAs
+
+
+**OSPF Routing Protocol Code**
+
+- check with
+
+`show ip route ospf` 
+
+- O = Intra area route (LSA Type 1)
+- OIA = Inter area route (LSA Type 3)
+- OE1 = External Type 1 route (LSA Type 5)
+- OE2 = External Type 2 route (LSA Type 5)
+- ON1 = NSSA Type 1 route (LSA Type 7)
+- ON2 = NSSA Type 2 route (LSA Type 7)
+- (* which can be O*IA, O*, O*E1, O*E2, O*N1, O*N2) = Default Route
+
+</details>
+
+
+<details>
+<summary>DBD (Database Description)</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>LSR (Link State Request)</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>LSU (Link State Update)</summary>
+
+
+
+</details>
+
+
+<details>
+<summary>LSACK (Link State Acknowledgement</summary>
+
+
+
+</details>
+
+</details>
+
+<details> 
+<summary><strong> OSPF Table Type</strong></summary>
+
+- Neighbor Table
+- Database Table (having LSAs)
+- Routing Table
+
+</details> 
+
+<details> 
+<summary><strong> OSPF Router Role </strong></summary>
+
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/97427e75-e744-4030-a5fc-2d36b76f3e92" />
+
+- Area Router (Router located inside one area which doesn’t hit any areas)
+- Area Border Router - ABR (Router hitting at least 2 areas)
+- Autonomous System Border Router - ASBR (Router hitting other routing protocol)
+
+</details> 
 
 
 
