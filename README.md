@@ -449,7 +449,34 @@ For Interfaces between each router
 
 
 
+# Day 5 (OSPF)
 
+- Link-state routing protocol
+- Open standard
+- SPF or Dijkstra algorithm
+- Classless
+- Supports FLSM, VLSM, CIDR and Manual summary
+- Incremental updates (hello = 10 sec dead = 40sec) which means that updates are happened during changes
+- Updates are sent as multicast (224.0.0.5 & 224.0.0.6)
+<summary>
+Metric = Cost (Reference Bandwidth / Interface Bandwidth)
+</summary>
+ 
+    - Cost = Reference BW / Interface BW
+ 
+    - Reference BW = 100
+    
+    - Ethernet Cost = 100 / 10 = 10
+    
+    - Fastethernet Cost = 100 / 100 = 1
+    
+    - Gigabitethernet Cost = 100 / 1000 = 1000
+    
+      - **Noted that if there are two fastethernet and gigabitethernet, we need to config Reference BW in interface in OSPF**  
+    
+- Administrative distance = 10
+- Load balancing via 4 equal cost paths by default (unequal cost load balancing not supported)
+- Hierarchical network design using Areas
 
 
 
