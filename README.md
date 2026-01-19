@@ -479,6 +479,9 @@ For Interfaces between each router
 <details>
 <summary><strong>OSPF 7 Stages</strong></summary>
 
+<img width="581" height="687" alt="image" src="https://github.com/user-attachments/assets/77b0e4df-e1b2-4394-8588-82e53a369769" />
+
+
 <details>
 <summary>Down</summary>
 
@@ -511,7 +514,10 @@ For Interfaces between each router
 <details>
 <summary>Exstart</summary>
 
+<img width="350" height="100" alt="image" src="https://github.com/user-attachments/assets/399f98fc-7e39-4264-b45d-5478bb869e74" />
 
+
+- Start Exchange Router-ID stored in DBD (Database description)
 
 </details>
 
@@ -519,7 +525,9 @@ For Interfaces between each router
 <details>
 <summary>Exchange</summary>
 
+<img width="300" height="153" alt="image" src="https://github.com/user-attachments/assets/c941d0ab-de4d-472a-80d9-3eedc1304a2b" />
 
+- Start exchange LSDB (Link-state database) and then exchange LSAck 
 
 </details>
 
@@ -527,7 +535,9 @@ For Interfaces between each router
 <details>
 <summary>Loading</summary>
 
+<img width="626" height="98" alt="image" src="https://github.com/user-attachments/assets/322d8569-2855-4751-b19f-6e8aadda8b95" />
 
+- Start Exchange LSR (Link-state Request)
 
 </details>
 
@@ -535,7 +545,9 @@ For Interfaces between each router
 <details>
 <summary>Full</summary>
 
+<img width="582" height="191" alt="image" src="https://github.com/user-attachments/assets/51196cac-7214-45d6-9257-c2b699986cee" />
 
+- State of LSAck
 
 </details>
 
@@ -544,6 +556,8 @@ For Interfaces between each router
 
 <details> 
 <summary> <strong> OSPF Packet Type</strong></summary>
+
+- Incremental Update ! 
 
 <details>
 <summary>Hello</summary>
@@ -554,6 +568,10 @@ For Interfaces between each router
 
 <details>
 <summary>LSA (Link State Advertisement) = Update Packet</summary>
+
+<img width="606" height="507" alt="image" src="https://github.com/user-attachments/assets/098f9ce0-40af-4a17-81c3-2e48409753ca" />
+
+The aging timer of LSAs is 39 mins 
 
 - Type 1 - Router LSAs (Updates in same areas)
 - Type 2 - Network LSAs (having DR & BDR)
@@ -619,6 +637,7 @@ For Interfaces between each router
 <details> 
 <summary><strong> OSPF Table Type</strong></summary>
 
+**All routers must have the same database  within same area** 
 - Neighbor Table
 - Database Table (having LSAs)
 - Routing Table
@@ -687,6 +706,10 @@ For Interfaces between each router
 - The router with second-highest priority is BDR
 - The default priority value is 1
 - In the case of a tie, router with highest router ID is DR second highest router ID becomes the BDR
+  - Router ID is used to identify each router Router-ID
+    - Manual Router-ID
+    - Highest IP of the logical interface (if configured)
+    - Highest IP address of Active Physical Interface
 - If router priority is 0 it cannot become the DR or BDR
 - Router which is not a DR or BDR is called as DROTHER
 - DR & BDR election is not preemptive which means that when DR is down > BDR becomes DR. When DR is up > BDR still left as DR.
@@ -705,3 +728,58 @@ For Interfaces between each router
     - DR > DROTHER > 224.0.0.5
 
 </details>
+
+
+**Sequence Timer in LSAs** 
+
+- They are 4 bytes or 32 bytes
+- Start with 0x80000001 and End with 0x7FFFFFFF
+
+----------------------------------------
+**OSPF Running** 
+
+`router ospf (process_id)` 
+
+<process-id should be same within same area while process-id shouldn't be the same in ABR> 
+
+`network (network_ip) (wildcard_mask) (area_number)` 
+
+**Checking network-ip with route** 
+
+`show ip route (network_ip)` 
+
+
+**Checking route with interface** 
+
+`show ip ospf (intface_name)` 
+
+**Changing metric cost for interface** 
+
+`ip ospf cost (number) <number can between 1 and 65535>` 
+
+**Checking OSPF Neighbor process** 
+
+`debug ip ospf adj` 
+
+or 
+
+`debug ip ospf events` 
+
+**Clear ospf process**
+
+`clear ip ospf process`
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
