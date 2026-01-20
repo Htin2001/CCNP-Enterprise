@@ -715,7 +715,7 @@ The aging timer of LSAs is 39 mins
 - DR & BDR election is not preemptive which means that when DR is down > BDR becomes DR. When DR is up > BDR still left as DR.
 - Changing priority
 
-`interface (type) (no)`
+`(intface_name)`
 
 `ip ospf priority (0-255)` 
 
@@ -744,18 +744,26 @@ The aging timer of LSAs is 39 mins
 
 `network (network_ip) (wildcard_mask) (area_number)` 
 
+
+
 **Checking network-ip with route** 
 
 `show ip route (network_ip)` 
+
+
 
 
 **Checking route with interface** 
 
 `show ip ospf (intface_name)` 
 
+
+
 **Changing metric cost for interface** 
 
 `ip ospf cost (number) <number can between 1 and 65535>` 
+
+
 
 **Checking OSPF Neighbor process** 
 
@@ -764,6 +772,8 @@ The aging timer of LSAs is 39 mins
 or 
 
 `debug ip ospf events` 
+
+
 
 **Clear ospf process**
 
