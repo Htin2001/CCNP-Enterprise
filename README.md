@@ -446,7 +446,7 @@ For Interfaces between each router
 
 
 
-# Day 5 (OSPF)
+# Day 6/7 (OSPF)
 
 - Link-state routing protocol
 - Open standard
@@ -465,7 +465,7 @@ For Interfaces between each router
     
     - Fastethernet Cost = 100 / 100 = 1
     
-    - Gigabitethernet Cost = 100 / 1000 = 1000
+    - Gigabitethernet Cost = 100 / 1000 = 1
     
       - **Noted that if there are two fastethernet and gigabitethernet, we need to config Reference BW in interface in OSPF**
     
