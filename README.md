@@ -785,6 +785,7 @@ or
 
 # Day 8 (OSPF Virtual Link | Summarization)
 
+**OSPF Virtual-link**
 
 <img width="600" height="630" alt="image" src="https://github.com/user-attachments/assets/2d16aebd-fbeb-4638-a900-13b4d6b4d798" />
 
@@ -799,7 +800,7 @@ or
 
 **Download Virtual-link two virtual transit areas Lab File (EVE File)**
 
-
+[Day 8 Two Virtual Transit Areas Virtual-link Lab](https://github.com/Htin2001/CCNP-Enterprise/blob/9b9da220ffa54418e081ac801933882028f1ca0b/Day%208%20OSPF%20Virtual%20Link.zip)
 
 
 - According the upper two virtual transit areas lab, we need to type command like following
@@ -816,6 +817,47 @@ or
 > R5# router ospf 1
 >
 > R5# area 20 virtual-link 2.2.2.2
+
+
+**Summarization**
+
+
+- It is the processes of combining smaller networks in to single large sub network (Combining the contagious address into one and send to neighbor)
+- It helps in reducing the size of routing table 
+
+
+
+**Summarization Adv**
+
+- Minimizing the routing table
+- Less use of resources like memory, processor, bandwidth
+
+**Summarization Disadv**
+
+- Even though it reduces number of routes, it includes unnecessary networks
+- Router which accepts summarization, it doesn’t know which networks are used by the neighbor routers
+
+**Auto Summary**
+
+- Summarization is done to a default class full boundary ( /8 /16 /24 )
+- Routing protocol like RIPv2, EIGRP, BGPv4 support auto summary and can disabled
+- Routing protocol like OSPF and ISIS doesn’t support auto summary
+
+**Manual Summary**
+
+- Administrator manually configures Summarization to specific boundary
+- It is supported by all classless routing protocols
+- EIGRP, RIPv2, OSPF, BGP support Manual summary
+
+<img width="648" height="461" alt="image" src="https://github.com/user-attachments/assets/2d0dbd4e-29a2-435d-bc70-0ed99c9d5e1e" />
+
+
+<img width="1000" height="708" alt="image" src="https://github.com/user-attachments/assets/0acd1a44-8f48-42f2-81c1-553f79299144" />
+
+<img width="1000" height="822" alt="image" src="https://github.com/user-attachments/assets/fc37103f-f670-46b0-a4ba-c336f9254248" />
+
+ <img width="790" height="506" alt="image" src="https://github.com/user-attachments/assets/e43e0dd2-2712-4564-b492-5426674fe74c" />
+
 
 ----------------------------------------
 **Configuration of OSPF Virtual-link**
