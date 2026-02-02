@@ -851,12 +851,11 @@ or
 
 <img width="648" height="461" alt="image" src="https://github.com/user-attachments/assets/2d0dbd4e-29a2-435d-bc70-0ed99c9d5e1e" />
 
-
 <img width="1000" height="708" alt="image" src="https://github.com/user-attachments/assets/0acd1a44-8f48-42f2-81c1-553f79299144" />
 
 <img width="1000" height="822" alt="image" src="https://github.com/user-attachments/assets/fc37103f-f670-46b0-a4ba-c336f9254248" />
 
- <img width="790" height="506" alt="image" src="https://github.com/user-attachments/assets/e43e0dd2-2712-4564-b492-5426674fe74c" />
+<img width="790" height="506" alt="image" src="https://github.com/user-attachments/assets/e43e0dd2-2712-4564-b492-5426674fe74c" />
 
 
 ----------------------------------------
@@ -870,8 +869,32 @@ or
 - router-id means remote ABR router-id 
 
 
+**RIP Summarization**
+
+`interface (interface_name)`
+
+`ip summary address rip (network_id) (subnet_mask)` 
+
+**EIGRP Summarization**
+
+`interface (interface_name)`
+
+`ip summary address eigrp (process_number) (network_id) (subnet_mask)`
 
 
+**OSPF Summarization**
 
+- OSPF routes on ABR
+
+`router ospf (process_id)`
+
+`area (area_number which desired summarization networks are located) range (network_ip) (subnet_mask)` 
+
+
+- External routes on ASBR
+
+`router ospf (process_id)`
+
+`summary-address (network_ip) (subnet_mask)` 
 
 
