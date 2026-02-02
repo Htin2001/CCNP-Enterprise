@@ -829,7 +829,7 @@ or
 
 **Download RIP / EIGRP / OSPF Route Summarization Lab (EVE Lab File)** 
 
-
+[Day 8 RIP / EIGRP / OSPF Route Summarization Lab](https://github.com/Htin2001/CCNP-Enterprise/blob/f7dcc27fd92cf74f52313eba5e1159e84d9430a6/Day%208%20Summarization.zip)
 
 **Summarization Adv**
 
