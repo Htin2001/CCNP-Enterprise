@@ -781,12 +781,29 @@ or
 
 
 
+# Day 8 (OSPF Virtual Link | Summarization)
+
+
+<img width="600" height="630" alt="image" src="https://github.com/user-attachments/assets/2d16aebd-fbeb-4638-a900-13b4d6b4d798" />
+
+
+- Virtual links are used to connect a dis-contiguous area  to area 0
+- A logical connection is built between routers (ABR)
+- Virtual links are recommended for backup or temporary connections
+
+**Virtual-link Two Vritual Transit Areas**
 
 
 
+----------------------------------------
+**Configuration of OSPF Virtual-link**
 
+`router ospf (process-id)` 
 
+`area (area-id) virtual-link (router-id)` 
 
+- area-id means transit area
+- router-id means remote ABR router-id 
 
 
 
