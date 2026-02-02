@@ -793,6 +793,7 @@ or
 
 **Virtual-link Two Vritual Transit Areas**
 
+<img width="926" height="572" alt="image" src="https://github.com/user-attachments/assets/1ae181ad-1f32-4798-90a0-6434503ec55f" />
 
 
 ----------------------------------------
