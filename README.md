@@ -380,11 +380,13 @@ For Interfaces between each router
 - **Match** criteria used with **ACL & Prefix-list** while **set** criteria used with **action**
 - The common uses of route-maps are as follows:
   - Redistribution route filtering
- 
+
+<img width="902" height="447" alt="image" src="https://github.com/user-attachments/assets/7387e645-418d-43de-8595-9d5b1bd01030" />
+
     **Download Redistribution Using Route-Map Lab File (EVE File)**
     
     [Day 5 Redistribution Using Route-Map Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/09bbf55837d35935e3da6f9600d304445b8f889e/Redistribution%20Using%20Route-Map.zip) 
-    <img width="902" height="447" alt="image" src="https://github.com/user-attachments/assets/7387e645-418d-43de-8595-9d5b1bd01030" />
+    
     - According to the image, RIP routes entering into OSPF routes, we need to make ***Redistribution RIP routes*** into OSPF routes in router R3.
     
     - `router ospf 1`
@@ -795,6 +797,25 @@ or
 
 <img width="926" height="572" alt="image" src="https://github.com/user-attachments/assets/1ae181ad-1f32-4798-90a0-6434503ec55f" />
 
+**Download Virtual-link two virtual transit areas Lab File (EVE File)**
+
+
+
+
+- According the upper two virtual transit areas lab, we need to type command like following
+> R2# router ospf 1
+>
+> R2# area 30 virtual-link 6.6.6.6
+>
+> R2# area 20 vritual-link 5.5.5.5
+
+> R6# router ospf 1
+>
+> R6# area 30 virtual-link 2.2.2.2
+
+> R5# router ospf 1
+>
+> R5# area 20 virtual-link 2.2.2.2
 
 ----------------------------------------
 **Configuration of OSPF Virtual-link**
@@ -805,6 +826,7 @@ or
 
 - area-id means transit area
 - router-id means remote ABR router-id 
+
 
 
 
