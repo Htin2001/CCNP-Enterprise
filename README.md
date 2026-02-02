@@ -825,6 +825,10 @@ or
 - It is the processes of combining smaller networks in to single large sub network (Combining the contagious address into one and send to neighbor)
 - It helps in reducing the size of routing table 
 
+<img width="1000" height="631" alt="image" src="https://github.com/user-attachments/assets/bbe33608-29c9-4e19-9a5b-256a8b477355" />
+
+**Download RIP / EIGRP / OSPF Route Summarization Lab (EVE Lab File)** 
+
 
 
 **Summarization Adv**
