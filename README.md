@@ -379,48 +379,49 @@ For Interfaces between each router
 - Match criteria and set criteria can be used, similar to the “if, then” logic in a scripting language
 - **Match** criteria used with **ACL & Prefix-list** while **set** criteria used with **action**
 - The common uses of route-maps are as follows:
-  - Redistribution route filtering
+
+**Redistribution route filtering**
 
 <img width="902" height="447" alt="image" src="https://github.com/user-attachments/assets/7387e645-418d-43de-8595-9d5b1bd01030" />
 
-    **Download Redistribution Using Route-Map Lab File (EVE File)**
+**Download Redistribution Using Route-Map Lab File (EVE File)**
     
-    [Day 5 Redistribution Using Route-Map Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/09bbf55837d35935e3da6f9600d304445b8f889e/Redistribution%20Using%20Route-Map.zip) 
+[Day 5 Redistribution Using Route-Map Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/09bbf55837d35935e3da6f9600d304445b8f889e/Redistribution%20Using%20Route-Map.zip) 
     
-    - According to the image, RIP routes entering into OSPF routes, we need to make ***Redistribution RIP routes*** into OSPF routes in router R3.
+- According to the image, RIP routes entering into OSPF routes, we need to make ***Redistribution RIP routes*** into OSPF routes in router R3.
     
-    - `router ospf 1`
+- `router ospf 1`
    
-    - `no redistribute rip subnets`
+- `no redistribute rip subnets`
    
-    - `redistribute rip subnets route-map (route-map's name)`
+- `redistribute rip subnets route-map (route-map's name)`
 
-  - Policy-based routing
+**Policy-based routing**
 
-    **Download PBR Lab File (EVE File)**
+**Download PBR Lab File (EVE File)**
  
-    [Day 5 PBR Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/aa81e545546016f4eb6da00c7faa74870f3627dd/Day%205%20PBR%20Lab.zip) 
+[Day 5 PBR Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/aa81e545546016f4eb6da00c7faa74870f3627dd/Day%205%20PBR%20Lab.zip) 
 
-    <img width="696" height="472" alt="image" src="https://github.com/user-attachments/assets/19e58a7c-a95b-4813-933f-94adac9a4ee4" />
+<img width="696" height="472" alt="image" src="https://github.com/user-attachments/assets/19e58a7c-a95b-4813-933f-94adac9a4ee4" />
 
-      - According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
-      
-      - `int e0/0`
+- According to the image, PBR need to assign the incoming interface of router R1. So, in R1 we need to write
+
+- `int e0/0`
      
-      - `ip policy route-map (route-map's name)`
+- `ip policy route-map (route-map's name)`
     
-    - It is used for implementing policy that cause the packet to take a different direction
-    - PBR allows **source** based routing
-    - Routing table is destination base
-      - For advantages;
-        - Different users can go from different directions
-        - Load sharing
-        - PBR will implemented on the **incoming direction of the source interface**
-        - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with permit action**
-        - If the packet is match in the route map and route map deny packet will be forwarded according to normal routing table
+- It is used for implementing policy that cause the packet to take a different direction
+- PBR allows **source** based routing
+- Routing table is destination base
+  - For advantages;
+    - Different users can go from different directions
+    - Load sharing
+    - PBR will implemented on the **incoming direction of the source interface**
+    - If the packet is match in the route map and it is permit it will be send according to the policy which means that **route-map uses only with permit action**
+    - If the packet is match in the route map and route map deny packet will be forwarded according to normal routing table
 
   
-  - BGP policy implementation
+ **BGP policy implementation**
 
 
 ----------------------------------------
