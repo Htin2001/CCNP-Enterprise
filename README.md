@@ -307,6 +307,8 @@ For Interfaces between each router
 - Virtual routing and forwarding is a technology that creates separate virtual routers on a physical **router** which means there will become   a separate routing table which is also like    VLAN.
 - VRFs are commonly used for MPLS deployments (Layer 3 VPN), when we use VRFs without MPLS then we call it VRF lite.
 
+**Cisco EVN (Easy Virtual Network)**
+
 
 
 ----------------------------------------
@@ -326,7 +328,7 @@ For Interfaces between each router
 
 **Offset-list Command**
 
-- When we use the offset-list, we have to use it with access-list. So, we need to set the          access-list first.
+- When we use the offset-list, we have to use it with access-list. So, we need to set the access-list first.
 
 `ip access-list (standard or extended) (name)`
 
@@ -343,16 +345,50 @@ For Interfaces between each router
 
 `sh ip vrf {verifying vrf}`
 
+**Creating EVN**
 
-**Assign VRF tables to intterfaces**
+`vrf definition (vrf_name)` 
+
+`vnet tag (number)`
+
+- number shouldn't be the same for different vrfs
+- Vnet tag numbers work like Vlan tag. For example {Data+Vnet_Tag_Number} through other side routers
+
+`address-family ipv4`
+
+**Assign VRF tables to interfaces in VRFS**
 
 `int (int-name)` 
 
 `ip vrf forwarding (vrf_name)` 
+
+`ip address (network) (subnet mask)`
+
 - If you assigned ip address in global routing table, we need to assign ip address for that interface because of enabling VRF.
 
-`show ip route vrf (vrf_name) {checking vrf routing table}`
+**Assign VRF tables to interfaces in EVN Configuration**
 
+`int (int-name)` 
+
+`vrf forwarding (vrf_name)` 
+
+`ip address (network) (subnet mask)`
+
+**Checking vrf routing table** 
+
+`show ip route vrf (vrf_name) `
+
+**Checking vrf for EVN**
+
+`show vrf` 
+
+**Make Trunk in EVN**
+
+`interface (interface_name)` 
+
+`vnet trunk`
+
+`ip address (network) (subnet mask)` 
 
 **Routing OSPF route with VRF** 
 
@@ -364,9 +400,13 @@ For Interfaces between each router
 
 - Noted that when we run the ospf, we need to use different ospf id for different vrfs.
 
-`show ip route vrf (vrf_name) ospf {Verifying OSPF route with VRF}`
+**Verifying OSPF route with VRF**
 
+`show ip route vrf (vrf_name) ospf `
 
+**Checking interfaces in details** 
+
+`show derived-config | begin (interface_name)` 
 
 # Day 5 (Route Map) 
 
