@@ -309,6 +309,23 @@ For Interfaces between each router
 
 **Cisco EVN (Easy Virtual Network)**
 
+- Like Making Trunk 
+
+<img width="500" height="195" alt="image" src="https://github.com/user-attachments/assets/0f1976d7-c2f7-4def-a159-2f624777b44d" />
+
+**VRF Lite Route Leaking**
+
+<img width="800" height="357" alt="image" src="https://github.com/user-attachments/assets/da526a1a-5369-4017-a80e-961fc7d3f80b" />
+
+- Like Inter_Vlan Routing
+- Different VRFs Communication
+- It is possible to **leak** route from one VRF into another. There are two options to achieve this
+  - Static Routes
+    - Static Routes directly between VRFS are not supported. What does work, is routing traffic from a VRF to the global routing table and then to the destination VRF
+      <img width="900" height="545" alt="image" src="https://github.com/user-attachments/assets/7c627cfc-e916-485a-8cd8-6cdd11d3e220" />
+
+      <img width="900" height="558" alt="image" src="https://github.com/user-attachments/assets/bafb129c-2494-4c8a-9330-b0e8f4bb828c" />
+  - MP-BGP
 
 
 ----------------------------------------
@@ -339,7 +356,7 @@ For Interfaces between each router
 `offset-list (access-list's name) in (numbers) (interface name)` 
 
 
-**Creating VRF tables**
+**Creating VRF_lite tables**
 
 `ip vrf (name)` 
 
@@ -374,7 +391,7 @@ For Interfaces between each router
 
 `ip address (network) (subnet mask)`
 
-**Checking vrf routing table** 
+**Checking vrf-lite routing table** 
 
 `show ip route vrf (vrf_name) `
 
@@ -407,6 +424,16 @@ For Interfaces between each router
 **Checking interfaces in details** 
 
 `show derived-config | begin (interface_name)` 
+
+**Routing Context** 
+
+`routing context vrf (vrf_name)` 
+
+- Do not need further to type vrf like
+
+  `show ip route ospf`
+
+
 
 # Day 5 (Route Map) 
 
