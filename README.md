@@ -146,7 +146,7 @@ For Interfaces between each router
 - Redistribute Specific Routes
 - Preventing Routing loops
 - Path Manipulation of some specific Routes
-- Changing Metric and Metric-type fro sepcific routes
+- Changing Metric and Metric-type for sepcific routes
 - Changing the Administrative Distance for Specific Routes
 - With BGP
   - Controlling routes to be advertised to ISP
