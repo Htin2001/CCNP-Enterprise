@@ -959,7 +959,7 @@ The aging timer of LSAs is 39 mins
 
 
 
-**3. NSSA (Change Type 7 from Type 5)**
+**3. NSSA (Change into Type 7 from Type 5)**
 
 - NSSA breaks stub area rules
   
@@ -985,7 +985,7 @@ The aging timer of LSAs is 39 mins
 
 
 
-**4. Totally NSSA (Filter Type 3, and Change Type 7 from Type 5)**
+**4. Totally NSSA (Filter Type 3, and Change into Type 7 from Type 5)**
 
 ----------------------------------------
 **OSPF Running** 
