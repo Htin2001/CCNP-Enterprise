@@ -910,7 +910,7 @@ The aging timer of LSAs is 39 mins
 - OSPF stubs allows the routers in an area to use default routes for forwarding packets to ABRs, rather than more specific routes
 - Reduces memory consumption and CPU processing time on the routers inside the area, because the routers in that area can have fewer LSAs in their LSDBs
 
-1. Stub ( Filter Type 5 )
+**1. Stub ( Filter Type 5 )**
 
 - External LSAs are stopped (OE1 and OE2 routes)
   
@@ -926,12 +926,66 @@ The aging timer of LSAs is 39 mins
   
 - All routers in the area are configured as stub routers
 
+<ins>Before Stub</ins> 
 
-2. Totally Stub (Type 3 and 5) 
 
-3. NSSA (Change Type 7 from Type 5)
 
-4. Totally NSSA (Filter Type 3, and Change Type 7 from Type 5)
+
+<ins>After Stub</ins> 
+
+
+
+
+
+**2. Totally Stub (Type 3 and 5)**
+
+- External LSAs are stopped (E1 and E2)
+  
+- Summary LSAs are stopped (OIA routes)
+  
+- Routing table is reduced to a minimum
+  
+- This is a Cisco proprietary feature
+
+<ins>Before Totally Stub</ins> 
+
+
+
+
+<ins>After Totally Stub</ins> 
+
+
+
+
+
+
+**3. NSSA (Change Type 7 from Type 5)**
+
+- NSSA breaks stub area rules
+  
+- ASBR (R1) is allowed in NSSA
+  
+- Special LSA type 7 defined, sent by ASBR
+  
+- ABR converts LSA type 7 to LSA type 5
+  
+- ABR sends default route into NSSA instead of external routes from other ASBRs
+  
+- NSSA is an RFC addendum
+
+<ins>Before NSSA</ins> 
+
+
+
+
+<ins>After NSSA</ins> 
+
+
+
+
+
+
+**4. Totally NSSA (Filter Type 3, and Change Type 7 from Type 5)**
 
 ----------------------------------------
 **OSPF Running** 
@@ -968,6 +1022,42 @@ Only on ABR (R3)
 
 `area 10 stub no-summary`
 
+**OSPF NSSA Configuring** 
+
+<img width="400" height="716" alt="image" src="https://github.com/user-attachments/assets/83b649e9-2b8f-4803-b5df-60ce88601f7f" />
+
+
+All Internal routers (R1 / R2) 
+
+`router ospf 1`
+
+`area 10 nssa`
+
+On ABR (R3) 
+
+`router ospf 1`
+
+`area 10 nssa default-information-originate`
+
+
+**OSPF Totally NSSA Configuration**
+
+<img width="400" height="716" alt="image" src="https://github.com/user-attachments/assets/af7bf1b2-5c9e-4736-ab51-f4daf55afb4b" />
+
+
+All Internal routers (R1 / R2) 
+
+`router ospf 1`
+
+`area 10 nssa`
+
+On ABR (R3) 
+
+`router ospf 1`
+
+`area 10 nssa no-summary`
+
+
 **Checking network-ip with route** 
 
 `show ip route (network_ip)` 
@@ -997,7 +1087,6 @@ or
 **Checking OSPF LSA Types**
 
 `sh ip ospf database` 
-
 
 
 **Clear ospf process**
