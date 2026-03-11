@@ -516,7 +516,13 @@ For Interfaces between each router
 
 
 
-# Day 6/7 (OSPF)
+# Day 6/7/9 (OSPF)
+
+<img width="700" height="760" alt="image" src="https://github.com/user-attachments/assets/1006c76b-038b-42c7-8f0a-9b4b5609b449" />
+
+
+[Day 9 OSPF _ Stub - Totally Stub - NSSA - Totally NSSA EVE Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/27060046dbcdaa16051fb25ae9bc6717361fb1fc/Day%209%20OSPF%20_%20Stub%20-%20Totally%20Stub%20-%20NSSA%20-%20Totally%20NSSA.zip)
+
 
 - Link-state routing protocol
 - Open standard
