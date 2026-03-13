@@ -1224,3 +1224,97 @@ or
 `summary-address (network_ip) (subnet_mask)` 
 
 
+
+# Day 10 (VLAN)
+
+**VLAN**
+
+- VLAN divides broadcast domains virtually
+  
+- VLANs are defined in the IEEE 802.1Q standard, which states that 32 bits are added to the packet header in the following fields:
+
+     <img width="800" height="246" alt="image" src="https://github.com/user-attachments/assets/dbc036f2-3693-42ef-b132-1ce42ff1e400" />
+
+    - **VLANS headers are not added to packets as they are forwarded locally in the switch. VLAN headers are added for packets that are sent across         on trunk ports** 
+  
+    - Tag protocol identifier (TPID): This 16-bit field is set to 0x8100 to identify the packet as an 802.1Q packet
+      
+    - Priority code point (PCP): This 3-bit field indicates a class of service (CoS) as part of Layer 2 quality of service (QoS) between switches
+      
+    - Drop eligible indicator (DEI): This 1-bit field indicates whether the packet can be dropped when there is bandwidth contention
+      
+    - VLAN identifier (VLAN ID): This 12-bit field specifies the VLAN associated with a network packet
+ 
+ - The VLAN identifier has only 12 bits, which provide 4094 unique VLANs. Catalyst switches use the following logic for VLAN identifiers:
+
+    - VLAN 0 is reserved for 802.1p traffic and cannot be modified or deleted
+      
+    - VLAN 1 is the default VLAN and cannot be modified or deleted
+      
+    - VLANs 2 to 1001 are in the normal VLAN range and can be added, deleted, or modified as necessary
+      
+    - VLANs 1002 to 1005 are reserved and cannot be deleted
+      
+    - VLANs 1006 to 4094 are in the extended VLAN range and can be added, deleted, or modified as necessary
+
+
+**Trunk Port**
+
+- Must be same vlan_ids on every single switch
+
+- Passing same VLAN Traffic between switches using Single Link
+
+- When VLAN passes through on trunk link, it taged with the trunking protocols
+
+  - Responsible for adding and removing tags on trunk links
+    1. ISL (Inter-switch Link) [ Cisco Proprietary ] 
+   
+    2. IEEE 802.1Q [ IEEE Open Standard ] 
+
+
+----------------------------------------
+
+**Creating VLANs**
+
+`vlan (number) or vlan 10 - 20 <range>` 
+
+`name (vlan_name)` 
+
+**Assign ports into vlan**
+
+`interface (interface_name)`
+
+`switchport mode access`
+
+`switchport access vlan (vlan no.) / or / name (Vlan_name)` 
+
+**Verify VLANs** 
+
+`show vlan brief` 
+
+`show vlan summary` 
+
+`show vlan id (vlan-id)` 
+
+`show (vlan_name)`
+
+**Trunk Configuration**
+
+`interface (interface_name)` 
+
+`switchport trunk encapsulation dot1q`
+
+`switchport mode trunk`
+
+**Limit VLANS on Trunk Links**
+
+`switchport trunk allowed vlan (vlan no.)` 
+
+**Verify Trunk** 
+
+`show interface trunk` 
+
+
+
+
+
