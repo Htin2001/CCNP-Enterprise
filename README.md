@@ -1315,6 +1315,63 @@ or
 `show interface trunk` 
 
 
+# Day 11 (Etherchannel)
+
+
+**Etherchannel Bundle**
+
+- Combining multiple Physical links in to one logical link (min:2 max:8)
+  
+- Increases bandwidth and provides redundancy
+
+- This has two modes:
+  
+  - Manual (on - on)
+  
+  - Dynamic (using Negotiation protocols)
+  
+    - LACP (IEEE 802.3ad) (Active _ Active) (Active _ Passive)
+      
+    - LACP advertises messages with the multicast MAC address **0180:C2000:0002**. LACP can operate in two modes :
+          
+      - Passive (Waiting Negotiate) 
+      - Active (Do Negotiate)
+              
+    - PAGP (Cisco proprietary) (Desirable _ Desirable) (Desirable _ Auto)
+      
+    - PAgP advertises messages with the multicast MAC address **0100:0CCC:CCCC** and the protocol code **0x0104**. PAgP can operate in two modes
+          
+      - Auto
+      - Desirable
+
+
+----------------------------------------
+
+**Configuration Etherchannel**
+
+`int (interface_name)` 
+
+`channel-group (number) mode (LACP or PAGP)`
+
+`interface port-channel (channel_group number)` 
+
+`switchport mode trunk`
+
+**Verifying Etherchannel** 
+
+`show etherchannel summary` 
+
+<img width="500" height="530" alt="image" src="https://github.com/user-attachments/assets/d03c0d6f-b0cd-4cd7-8f47-ecbc92827870" />
+
+<img width="700" height="496" alt="image" src="https://github.com/user-attachments/assets/c45a0e0a-b482-4dae-9313-be23fea36698" />
+
+<img width="700" height="550" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
+
+`show interface port-channel (port-_channel number)` 
+
+
+
+
 
 
 
