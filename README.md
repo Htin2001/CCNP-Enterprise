@@ -1315,8 +1315,43 @@ or
 `show interface trunk` 
 
 
-# Day 11 (Etherchannel)
+# Day 11 (VLAN Trunking Protocol | Dynamic Trunking Protocol | Etherchannel)
 
+**VLAN Trunking Protocol**
+
+- VLAN Trunking Protocol (VTP) to reduce the burden of provisioning VLANs on switches
+  
+- There are four roles in the VTP architecture
+  
+  - Server
+  - Client
+  - Transparent
+  - Off
+
+- VTP Versions 1 and 2 limited propagation to VLANs numbered 1 to 1005. VTP Version 3 allows for the full range of VLANs 1 to 4094
+
+- VTP supports having multiple VTP servers in a domain. These servers process updates from other VTP servers just as a client does. If a VTP domain     is Version 3, the primary VTP server must be set with the executive command vtp primary.
+
+
+**VTP Communication**
+
+- VTP advertises updates by using a multicast address across the trunk links for advertising updates to all the switches in the VTP domain. There are   three main types of advertisements:
+
+  - Summary
+ 
+  - Subset
+ 
+  - Client Requests
+ 
+**Dynamic Trunking Protocol** 
+
+- Dynamic trunk ports are established by the switch port sending Dynamic Trunking Protocol (DTP) packets to negotiate whether the other end can be a    trunk port. If both ports can successfully negotiate an agreement, the port will become a trunk switch port. DTP advertises itself every 30 seconds   to neighbors so that they are kept aware of its status
+
+- There are three modes:
+
+  - Trunk
+  - Dynamic Desirable (Starting Negotiate)
+  - Dynamic Auto (Waiting Negotiate)
 
 **Etherchannel Bundle**
 
@@ -1344,8 +1379,34 @@ or
       - Auto
       - Desirable
 
-
 ----------------------------------------
+**VTP Configuration**
+
+`vtp version 1 or 2 or 3`
+
+- Numbers should be same for all switches
+
+`vtp domain (name)`
+
+`vtp mode server / client / transparent`
+
+`vtp password (password)`
+
+**VTP Primary Configuration** 
+
+`SW1# vtp primary` 
+
+**Verifying VTP** 
+
+`show vtp status` 
+
+**Checking Trunklink State** 
+
+`show interface (interface_name) switchport` 
+
+or 
+
+`show interface trunk` 
 
 **Configuration Etherchannel**
 
@@ -1368,6 +1429,8 @@ or
 <img width="700" height="550" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
 
 `show interface port-channel (port-_channel number)` 
+
+
 
 
 
