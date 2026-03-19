@@ -1379,6 +1379,33 @@ or
       - Auto
       - Desirable
 
+
+**Troubleshooting EtherChannel Bundles**
+
+- Port type
+- Port mode
+- Native VLAN
+- Allowed VLAN
+- Speed
+- Duplex
+- MTU
+- Load Interval
+- Storm control
+
+**Load Balancing Traffic with EtherChannel Bundles**
+
+- dst-ip
+- dst-mac
+- dst-port
+- src-dst-ip
+- scr-dest-ip-only
+- src-dst-mac
+- src-dst-mixed-ip-port
+- src-dst-port
+- src-ip
+- src-mac
+- src-mixed-ip-port
+- src-port
 ----------------------------------------
 **VTP Configuration**
 
@@ -1418,6 +1445,42 @@ or
 
 `switchport mode trunk`
 
+**Configure the minimum links** 
+
+`port-channel min-links (number)` 
+
+**Configure the max links**
+
+`lacp max-bundle (number)` 
+
+**LACP System Priority**
+
+- The LACP system priority identifies which switch is the primary switch for an Etherchannel. The switch with the lowest system priority is preferred.
+
+`lacp system-priority (number)`
+
+`show lacp sys-id`
+
+**LACP Interface Priority**
+
+- Regarding with max links
+
+- A port with a lower port priority is preferred. The small numbers will work properly.
+
+`SW1 (config-if) # lacp port-priority 1` 
+
+**Making LACP Fast** 
+
+- Notes : Org Hello = 30 Sec Hold = 90 Sec 
+
+- Fast Hello = 1 sec Hold 3 sec 
+
+`SW1 (config-if-range) # lacp rate fast`
+
+**Making Port as a default** 
+
+default interface (interface_name)
+
 **Verifying Etherchannel** 
 
 `show etherchannel summary` 
@@ -1428,7 +1491,40 @@ or
 
 <img width="700" height="550" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
 
-`show interface port-channel (port-_channel number)` 
+`show interface port-channel (port_channel number)` 
+
+**Viewing Etherchannel Neighbor** 
+
+` show etherchannel port` 
+
+**Viewing LACP / PAGP Neighbor** 
+
+`show lacp / pagp neighbor`
+
+`show lacp / pagp neighbor detail` 
+
+**Viewing System-id` 
+
+`show lacp sys-id` 
+
+**Verify Etherchannel packets** 
+
+`show lacp / pagp counters`
+
+`clear lacp / pagp counters` 
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
