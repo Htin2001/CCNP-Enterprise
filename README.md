@@ -1503,7 +1503,7 @@ default interface (interface_name)
 
 `show lacp / pagp neighbor detail` 
 
-**Viewing System-id` 
+**Viewing System-id**
 
 `show lacp sys-id` 
 
