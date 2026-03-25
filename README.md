@@ -1540,7 +1540,7 @@ default interface (interface_name)
 
 - Level 1 system : this is an intra-area router, it only knows what the local area looks like and will only learn prefixes from its own area. It creates a level 1 link-state database    and SPF tree for the area
   
-- Level 2 system : this is a backbone router that knows all intra-area and inter-area routes. It creates a level 2 link-state database and SPF tree for the backbone
+- Level 2 system : this is a backbone router that knows all intra-area and inter-area routes. It creates a level 2 link-state database and SPF tree for the backbone 
 
 - Level 1-2 system : this is a router that performs both roles. It creates a separate level 1 and 2 link-state database and two SPF trees, one for each database 
 
