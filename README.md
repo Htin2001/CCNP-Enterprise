@@ -1514,20 +1514,37 @@ default interface (interface_name)
 `clear lacp / pagp counters` 
 
 
+# Day 13 (IS-IS) 
 
+- It stands for Integrated System (Router) to Integrated System (Router)
 
+- IGP and Link state routing protocol
 
+- It has three tables
 
+  - Neighbor table
+  - Database table
+  - Routing table 
 
+<img width="400" height="100" alt="image" src="https://github.com/user-attachments/assets/eb29688d-1027-4f24-ac99-6bf6ba95dc8e" />
 
+**Area and Router Roles**
 
+- IS-IS uses different areas where the entire router sits in an area, not just one of its interfaces like with OSPF
 
+  <img width="500" height="177" alt="image" src="https://github.com/user-attachments/assets/a1660fa2-dc1c-492d-bea8-738ff3488be1" />
 
+- There is no backbone area, the backbone is formed by a string of routers
 
+  <img width="500" height="499" alt="image" src="https://github.com/user-attachments/assets/34fdf69e-d188-485e-84ee-9b13ea264edc" />
 
+- Level 1 system : this is an intra-area router, it only knows what the local area looks like and will only learn prefixes from its own area. It creates a level 1 link-state database    and SPF tree for the area
+  
+- Level 2 system : this is a backbone router that knows all intra-area and inter-area routes. It creates a level 2 link-state database and SPF tree for the backbone
+
+- Level 1-2 system : this is a router that performs both roles. It creates a separate level 1 and 2 link-state database and two SPF trees, one for each database 
 
-
-
+- **Routers will only form neighbor adjacencies with routers that use the same level** 
 
 
 
