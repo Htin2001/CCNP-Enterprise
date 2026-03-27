@@ -1547,6 +1547,91 @@ default interface (interface_name)
 - **Routers will only form neighbor adjacencies with routers that use the same level** 
 
 
+# Day 14 (BFD / uRPF)
+
+**Bidirectional Forwarding Detection (BFD)** 
+
+<img width="500" height="346" alt="image" src="https://github.com/user-attachments/assets/02510fb3-4684-4260-ba6c-6a58e0499152" />
+
+
+- BFD is a super fast protocol that is able to detect link failures within milliseconds or even microseconds
+  
+- There are two operating modes to BFD, **asynchronous mode** and **demand mode**
+  
+- The asynchronous mode is similar to the hello and holddown timers, BFD will keep sending hello packets (called BFD control packets) and when you don’t receive some of them, the        session is teared down
+  
+- The demand mode is different, once BFD has found a neighbor it won’t continuously send control packets but only uses a polling mechanism
+  
+- When a device sends BFD echo packets then the receiver will return them without processing them
+  
+- When the sender doesn’t get the echo packets back, it knows something is wrong and will tear down the session
+
+<img width="800" height="224" alt="image" src="https://github.com/user-attachments/assets/b4f3d103-3e19-4faa-bd49-7c8c1c1bc363" />
+
+<img width="634" height="575" alt="image" src="https://github.com/user-attachments/assets/b9266aa9-cb60-4c38-9f2c-f147497e2747" />
+
+
+**Unicast Reverse Path Forwarding (uRPF)** 
+
+
+- Normally when your router receives unicast IP packets it only cares about one thing : what is the destination IP address of this IP packet so I can forward it?
+  
+- uRPF is a security feature that prevents these spoofing attacks. Whenever your router receives an IP packet it will check if it has a matching entry in the routing table for the       source IP address. If it doesn’t match, the packet will be discarded. uRPF has two modes:
+
+  - **Strict mode** means that that router will perform two checks for all incoming packets on a certain interface:
+ 
+    <img width="475" height="135" alt="image" src="https://github.com/user-attachments/assets/ba3323df-ef54-4d6a-8129-d979fd582afb" />
+    
+    - Do I have a matching entry for the source in the routing table?
+      
+    - Do I use the same interface to reach this source as where I received this packet on?
+   
+      <img width="700" height="800" alt="image" src="https://github.com/user-attachments/assets/c150b817-7eff-42b8-8bf4-28d7dfad6a57" />
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/ae5f2a09-50ef-4b94-b59a-382348621a21" />
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/dfb55664-f4b2-4e4a-9946-129b6e3068d5" />
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/61881fd0-d15f-4909-a163-68bf67290134" />
+
+      - And then we create loopback on R3 for spoofing and verifying
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/ca8546a4-37db-46fb-82e5-b011b86d35ad" />
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/c9f65c67-f694-4150-b0a9-1e09016bc9f4" />
+
+      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/a46ff273-be1e-40ae-a2de-7e3d0f43247d" />
+
+
+   - **Loose mode** means that the router will perform only a single check when it receives an IP packet on an interface
+     
+     - Do I have a matching entry for the source in the routing table ?
+
+     - When it passed this check, the packet is permitted. It doesn’t matter if we use this interface to reach the source or not. Loose mode is useful when you are connected to more          than one ISP and you use **asymmetric routing**.
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/d3004876-9f5d-42a3-b1e4-186497635e8c" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/d52ba870-9030-4525-89d8-99a39fb11f68" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/b4940bbf-933b-4bd6-93a5-c1b4bb930be1" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/97ad7b93-ea08-4b5f-ad79-e1e7f05d172b" />
+
+     - And then we create loopback on R3 for spoofing and verifying
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/7cc6e8e9-ca79-4d79-aec4-99a6b35fcca7" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/f0403267-3672-4283-91d2-6b96db8962db" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/aa40c97d-b982-47be-9c0a-fec2366acc15" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/46d903e2-79cd-4c6e-b8f8-84c707681f55" />
+
+     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/5ada2632-842c-4e96-83a9-d77ea8012217" />
+
+
+
+
 
 
 
