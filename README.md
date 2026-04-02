@@ -1590,7 +1590,7 @@ default interface (interface_name)
 
 **Unicast Reverse Path Forwarding (uRPF)** 
 
-<img width="1217" height="528" alt="image" src="https://github.com/user-attachments/assets/b1a44a01-b7b0-43ae-9f22-27ddc54c5b73" />
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/b1a44a01-b7b0-43ae-9f22-27ddc54c5b73" />
 
 **Download BFD & uRPF Lab File (EVE)** 
 
