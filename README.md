@@ -1582,6 +1582,9 @@ default interface (interface_name)
 
 <img width="634" height="575" alt="image" src="https://github.com/user-attachments/assets/b9266aa9-cb60-4c38-9f2c-f147497e2747" />
 
+- The BFD interval is to specify how often we will send BFD packets, this is similar to the hello packet that protocols like OSPF, EIGRP, HSRP, etc
+
+- The second value to configure is the minimum receive interval. This is how often we expect to receive a BFD packet from our neighbor
 
 **Unicast Reverse Path Forwarding (uRPF)** 
 
