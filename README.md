@@ -1365,7 +1365,7 @@ or
 
 **Download Etherchannel Bundle with maximum 2 links Lab File (EVE)**
 
-[Etherchannel LACP LAB File]
+[Etherchannel LACP LAB File](https://github.com/Htin2001/CCNP-Enterprise/blob/7ed8cd0c7cc656a62cced2845d99423ba5ae8e95/Day%2012%20Etherchannel.zip)
 
 - Combining multiple Physical links in to one logical link (min:2 max:8)
   
