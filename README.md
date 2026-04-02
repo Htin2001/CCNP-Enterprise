@@ -1321,7 +1321,9 @@ or
 
 <img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/a7c9aa46-b471-4fa7-8dc6-0d5b40eb4447" />
 
+**Download VTP Configuration Lab File (EVE)**
 
+[Day 11 VTP Configuration](https://github.com/Htin2001/CCNP-Enterprise/blob/898fed9164e4b0333d83231bd8019452b72f31fe/Day%2011%20VTP.zip)
 
 - VLAN Trunking Protocol (VTP) to reduce the burden of provisioning VLANs on switches
   
@@ -1358,6 +1360,12 @@ or
   - Dynamic Auto (Waiting Negotiate)
 
 **Etherchannel Bundle**
+
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/3770f576-b545-4f29-bc08-e419c8b3fd1e" />
+
+**Download Etherchannel Bundle with maximum 2 links Lab File (EVE)**
+
+[Etherchannel LACP LAB File]
 
 - Combining multiple Physical links in to one logical link (min:2 max:8)
   
