@@ -1315,9 +1315,13 @@ or
 `show interface trunk` 
 
 
-# Day 11 (VLAN Trunking Protocol | Dynamic Trunking Protocol | Etherchannel)
+# Day 11 (VTP | Dynamic Trunking Protocol | Etherchannel)
 
 **VLAN Trunking Protocol**
+
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/a7c9aa46-b471-4fa7-8dc6-0d5b40eb4447" />
+
+
 
 - VLAN Trunking Protocol (VTP) to reduce the burden of provisioning VLANs on switches
   
