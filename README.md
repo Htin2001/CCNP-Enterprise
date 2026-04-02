@@ -1586,6 +1586,8 @@ default interface (interface_name)
 
 - The second value to configure is the minimum receive interval. This is how often we expect to receive a BFD packet from our neighbor
 
+- The last value to configure is for the holddown. This is similar to the dead interval in OSPF or the holddown time that other protocols use
+
 **Unicast Reverse Path Forwarding (uRPF)** 
 
 
