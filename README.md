@@ -1594,7 +1594,7 @@ default interface (interface_name)
 
 **Download BFD & uRPF Lab File (EVE)** 
 
-[Download BFD & uRPF Lab File]
+[Download BFD & uRPF Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/4081e05d1cd972bacce12675d0697d316c4e81d4/Day%2014%20BFD%20and%20uRPF.zip)
 
 - Normally when your router receives unicast IP packets it only cares about one thing : what is the destination IP address of this IP packet so I can forward it?
   
@@ -1629,7 +1629,7 @@ default interface (interface_name)
      
      - Do I have a matching entry for the source in the routing table ?
 
-     - When it passed this check, the packet is permitted. It doesn’t matter if we use this interface to reach the source or not. Loose mode is useful when you are connected to more          than one ISP and you use **asymmetric routing**.
+     - When it passed this check, the packet is permitted. It doesn’t matter if we use this interface to reach the source or not. Loose mode is useful when you are connected to more than one ISP and you use **asymmetric routing**.
 
      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/d3004876-9f5d-42a3-b1e4-186497635e8c" />
 
