@@ -1731,7 +1731,7 @@ default interface (interface_name)
 > R1 (config-ip-sla-echo) # exit
 > R1 (config)# ip sla schedule 1 start-time now life forever
 
-**IP SLA with PBR Congiguration** 
+**IP SLA with PBR Configuration** 
 
 
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/898c9d2b-8cfd-4c4a-9355-bd9dd978c20b" />
