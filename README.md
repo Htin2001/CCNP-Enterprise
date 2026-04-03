@@ -1655,12 +1655,11 @@ default interface (interface_name)
 
 ## Day 15 (IP SLA)
 
-<img width="1732" height="802" alt="image" src="https://github.com/user-attachments/assets/6174ded5-3930-4953-bbbc-151cdc5b4ed6" />
+<img width="1000" height="750" alt="image" src="https://github.com/user-attachments/assets/6174ded5-3930-4953-bbbc-151cdc5b4ed6" />
 
 **Download IP SLA & IP SLA + Static Route & IP SLA + PBR Lab File (EVE)** 
 
-[IP SLA Lab] 
-
+[IP SLA Lab](https://github.com/Htin2001/CCNP-Enterprise/blob/5f56712daed3234b17a8f7b129738aacc2a87374/Day%2015%20IP%20SLA.zip)
 
 **IP SLA (Service Level Agreement)**
 
