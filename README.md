@@ -1561,6 +1561,10 @@ default interface (interface_name)
 
 # Day 14 (BFD / uRPF)
 
+**Download BFD & uRPF Lab File (EVE)** 
+
+[Download BFD & uRPF Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/4081e05d1cd972bacce12675d0697d316c4e81d4/Day%2014%20BFD%20and%20uRPF.zip)
+
 **Bidirectional Forwarding Detection (BFD)** 
 
 <img width="500" height="346" alt="image" src="https://github.com/user-attachments/assets/02510fb3-4684-4260-ba6c-6a58e0499152" />
@@ -1591,10 +1595,6 @@ default interface (interface_name)
 **Unicast Reverse Path Forwarding (uRPF)** 
 
 <img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/b1a44a01-b7b0-43ae-9f22-27ddc54c5b73" />
-
-**Download BFD & uRPF Lab File (EVE)** 
-
-[Download BFD & uRPF Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/4081e05d1cd972bacce12675d0697d316c4e81d4/Day%2014%20BFD%20and%20uRPF.zip)
 
 - Normally when your router receives unicast IP packets it only cares about one thing : what is the destination IP address of this IP packet so I can forward it?
   
@@ -1659,7 +1659,7 @@ default interface (interface_name)
 
 **Download IP SLA & IP SLA + Static Route & IP SLA + PBR Lab File (EVE)** 
 
-[IP SLA Lab](https://github.com/Htin2001/CCNP-Enterprise/blob/5f56712daed3234b17a8f7b129738aacc2a87374/Day%2015%20IP%20SLA.zip)
+[Download IP SLA Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/5f56712daed3234b17a8f7b129738aacc2a87374/Day%2015%20IP%20SLA.zip)
 
 **IP SLA (Service Level Agreement)**
 
