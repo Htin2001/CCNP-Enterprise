@@ -1653,6 +1653,91 @@ default interface (interface_name)
 
 
 
+## Day 15 (IP SLA)
+
+**IP SLA (Service Level Agreement)**
+
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/b8e9d2ff-60c4-46b4-a955-54ee15bd8901" />
+
+
+- IP SLA is a great feature on Cisco IOS devices that can be used to “measure” network performance 
+
+- Each measurement that we do with IP SLA is called an **operation**. For each operation we have to configure the type of traffic, source IP, destination IP, port numbers, etc. We can then configure when to run the operation…24/7, 9-to-5, etc
+  
+- When you use IP SLA for a simple ping then you only have to configure your local router. However when you want to use it for some more advanced things like sending RTP packets then you have to configure the remote router to **respond** to your IP SLA traffic
+  
+- Besides pings and RTP, there are a lot of different operations we can use:
+  - TCP Connections
+  - UDP
+  - DNS
+  - DHCP
+  - HTTP
+  - FTP
+
+
+**Reliable Static Route with IP SLA**
+
+
+<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/dc89309d-3a01-47ec-bc30-7bf696ad2944" />
+
+- IP SLA is a great tool on Cisco routers that allows us to generate traffic which can be used to check delay / latency, jitter but can also be combined with object tracking
+
+- SLA ↔ OT (Object Tracking) ↔ Static Routes
+
+
+**Reliable PBR with IP SLA**
+
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/435a21c6-f032-498f-b640-c5f2077e2738" />
+
+- We’ll use PBR to overrule the routing table but only when our IP SLA operation is up and running 
+
+
+----------------------------------------
+
+**IP SLA Configuration** 
+
+> ```
+> Customer(config)# ip sla 1
+> Customer(config-ip-sla)# icmp-echo 192.168.12.2
+> Customer(config-ip-sla-echo)# frequency (number for seconds)=10
+>
+> Customer(config)# ip sla schedule 1
+> Customer(config)# ip sla schedule 1 start-time now life forever
+> ```
+
+
+**Verifying IP SLA** 
+
+> ```
+> Customer# show ip sla configuration
+>
+> Customer# show ip sla statistics
+
+
+
+**IP SLA with Static Route Configuration**
+
+> ```
+> Configuration Default routes with IP SLA 
+> R1 (config) # ip route 0.0.0.0 0.0.0.0 192.168.12.2 track 1 
+> R1 (config) # ip route 0.0.0.0 0.0.0.0 192.168.13.2 2 
+> R1 (config) # track 1 rtr 1 (or) track 1 ip sla 1
+>
+> Creating IP SLA instance that pings the IP address of the ISP1 router
+> R1 (config) # ip sla 1 
+> R1 (config-ip-sla) # icmp-echo 8.8.8.8
+> R1 (config-ip-sla-echo) # timeout (numbers for milliseconds)=100
+> R1 (config-ip-sla-echo) # frequency (number for seconds)=1 
+> R1 (config-ip-sla-echo) # exit
+> R1 (config)# ip sla schedule 1 start-time now life forever
+
+**IP SLA with PBR Congiguration** 
+
+
+<img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/898c9d2b-8cfd-4c4a-9355-bd9dd978c20b" />
+
+
+<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
 
