@@ -34,6 +34,7 @@ On day 2, we discussed about the details of RIP routing protocol.
 - RIP v1 is a classfull routing protocol which doesn't carry subnet mask information along with the updates. So the disadvantage is when we use classless address there will become a problem in ruinning of classless protocol.
 - Updates are broadcasted via 255.255.255.255
 - Administrative distance is 120
+- **Metric = Hop Counts**
 - Max Hop Counts : 15
 - Load Balancing of 4 equal paths mean that load balancing in 60-40 or 80-20
 - Used for Small organization
@@ -531,7 +532,7 @@ For Interfaces between each router
 - Supports FLSM, VLSM, CIDR and Manual summary
 - Incremental updates (hello = 10 sec dead = 40sec) which means that updates are happened during changes
 - Updates are sent as multicast (224.0.0.5 & 224.0.0.6) 
-- Metric = Cost (Reference Bandwidth / Interface Bandwidth)
+- **Metric = Cost (Reference Bandwidth / Interface Bandwidth)**
  
     - Cost = Reference BW / Interface BW 
  
@@ -1718,6 +1719,7 @@ default interface (interface_name)
 > Customer# show ip sla configuration
 >
 > Customer# show ip sla statistics
+> ```
 
 
 
@@ -1736,6 +1738,7 @@ default interface (interface_name)
 > R1 (config-ip-sla-echo) # frequency (number for seconds)=1 
 > R1 (config-ip-sla-echo) # exit
 > R1 (config)# ip sla schedule 1 start-time now life forever
+> ```
 
 **IP SLA with PBR Configuration** 
 
@@ -1744,6 +1747,139 @@ default interface (interface_name)
 
 
 <img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
+
+
+# Day 16 (BGP) 
+
+**Border Gateway Protocol (BGP)**
+
+<img width="800" height="680" alt="image" src="https://github.com/user-attachments/assets/157f748d-a41e-4102-8edd-5040d1ee67e9" />
+
+- Open Standard
+  
+- Exterior Gateway protocol
+  
+- Designed for Inter-AS Domain Routing
+  
+- Designed to scale huge inter-network like internet
+  
+- Classless (Support FLSM, VLSM, VLSM, CIDR, auto and manual summary)
+  
+- Updates are incremental and trigger
+  
+- **Path vector protocol**
+
+- EGP → BGP → IBGP and EBGP
+  
+- IGP has (Dynamic Auto or Dynamic Neighbor Discorvery) but EGP didn't. So it sends updates to manually defined neighbor as unicast which mean it needs to define it's neighbor bu        itself
+  
+- BGP is application layer protocol uses TCP for reliability, TCP port 179
+  
+- **Metric = Attributes (AS path)**
+  
+- Administrative distance
+    - 20 External updates (EBGP)
+    - 200 Internal updates (IBGP)
+
+
+- An AS is a collection of networks under a single technical administration
+  
+- EGP (BGP) is used between multiple autonomous systems while IGP (RIP / OSPF / EIGPR) operates within the same autonomous systems
+  
+- Exchange of loop-free routing information is guaranteed
+
+**When to use BGP**
+
+- A.S. working as transit A.S. (Ex. ISP)
+- A.S. connected to multiple A.S (when the AS is multi-homed) data traffic path entering or leaving A.S. need to manipulated
+
+**When not to use BGP**
+
+- If it is Single-home A.S
+- Lack of resources like memory and less processing power in routers
+- Limited understanding about BGP route filtering and path selection processes
+
+
+**BGP Neighbors** 
+
+- BGP neighbors are routers forming TCP connection for exchanging BGP updates
+- Also called as BGP Peers or BGP Speakers
+- Two type of BGP neighbor relationship
+    - IBGP (Internal BGP)
+    - EBGP (External BGP)
+
+**BGP Databases and BGP Tables** 
+
+Neighbor table 
+
+- A list of all configured BGP neighbors
+- Has to be manually configured using neighbor command
+
+BGP forwarding table/database 
+
+- A list of networks known by BGP, along with their paths and attributes
+
+**BGP’s loop prevention mechanism** 
+
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/5661de97-c8c3-40ec-ba9f-5daa54f35342" />
+
+**Type of ISP Connections**
+
+Single Home 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/74aa682a-068e-4d6e-8b42-a0a7193534d0" />
+
+- A site with a single ISP connection i s single-homed
+- This is fine for a site that does not depend heavily on Internet or WAN connectivity
+- Either use static routes, or advertise the site routes t o the ISP and receive a default route from the ISP
+
+
+Dual Home 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/339cc799-278e-40b0-8cf8-e2dd4decedc2" />
+
+- A dual-homed site has two connections to the same ISP, either from one router or two routers
+- One link might be primary and the other backup, or the site might load balance over both links
+- Either static or dynamic routing would work in this case
+
+
+Multi-homing 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c370373e-0be3-49c6-8853-9216b44bc3cf" />
+
+- Multi-homing means connecting to more than one ISP at the same time
+- It is done for redundancy and backup if one ISP fails and for better performance if one ISP provides a better path to frequently used networks
+- This also gives you an ISP - independent solution
+- BGP is typically used with multi-homed connections
+
+
+Dual Multi-homing 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/eae55e80-cc46-4616-918d-eee099bc07f9" />
+
+- You can take multi-homing a step further and be dual-multi-homed with two connections to multiple ISPs
+- This gives the most redundancy
+- BGP is used with the ISPs and can be used internally also
+
+
+**Connecting to the Internet with BGP Route reception options** 
+
+<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/b6cacd54-e4a3-4471-bf57-23eb38b561ea" />
+
+- Default route from provider(s)
+  - Easy on resources, internal traffic routed to nearest BGP router
+- Some routes + default route
+  - Allows for selection of some paths with other falling back to a default route
+- All routes (full table)
+  - Hard on resources, but guarantees the most direct path is taken
+
+
+
+
+
+
+
+
 
 
 
