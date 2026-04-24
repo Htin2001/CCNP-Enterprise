@@ -1746,14 +1746,14 @@ default interface (interface_name)
 <img width="600" height="800" alt="image" src="https://github.com/user-attachments/assets/898c9d2b-8cfd-4c4a-9355-bd9dd978c20b" />
 
 
-<img width="700" height="600" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
+<img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
 # Day 16 (BGP) 
 
 **Border Gateway Protocol (BGP)**
 
-<img width="800" height="680" alt="image" src="https://github.com/user-attachments/assets/157f748d-a41e-4102-8edd-5040d1ee67e9" />
+<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/157f748d-a41e-4102-8edd-5040d1ee67e9" />
 
 - Open Standard
   
@@ -1827,7 +1827,7 @@ BGP forwarding table/database
 
 Single Home 
 
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/74aa682a-068e-4d6e-8b42-a0a7193534d0" />
+<img width="450" height="300" alt="image" src="https://github.com/user-attachments/assets/74aa682a-068e-4d6e-8b42-a0a7193534d0" />
 
 - A site with a single ISP connection i s single-homed
 - This is fine for a site that does not depend heavily on Internet or WAN connectivity
@@ -1836,7 +1836,7 @@ Single Home
 
 Dual Home 
 
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/339cc799-278e-40b0-8cf8-e2dd4decedc2" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/339cc799-278e-40b0-8cf8-e2dd4decedc2" />
 
 - A dual-homed site has two connections to the same ISP, either from one router or two routers
 - One link might be primary and the other backup, or the site might load balance over both links
@@ -1845,7 +1845,7 @@ Dual Home
 
 Multi-homing 
 
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/c370373e-0be3-49c6-8853-9216b44bc3cf" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/c370373e-0be3-49c6-8853-9216b44bc3cf" />
 
 - Multi-homing means connecting to more than one ISP at the same time
 - It is done for redundancy and backup if one ISP fails and for better performance if one ISP provides a better path to frequently used networks
@@ -1855,7 +1855,7 @@ Multi-homing
 
 Dual Multi-homing 
 
-<img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/eae55e80-cc46-4616-918d-eee099bc07f9" />
+<img width="500" height="500" alt="image" src="https://github.com/user-attachments/assets/eae55e80-cc46-4616-918d-eee099bc07f9" />
 
 - You can take multi-homing a step further and be dual-multi-homed with two connections to multiple ISPs
 - This gives the most redundancy
