@@ -935,11 +935,11 @@ The aging timer of LSAs is 39 mins
 
 <ins>Before Stub</ins> 
 
-<img width="800" height="835" alt="Day 9 Original" src="https://github.com/user-attachments/assets/e58c628c-bf2f-4ee2-ae54-a9eff6a03f78" />
+<img width="500" height="300" alt="Day 9 Original" src="https://github.com/user-attachments/assets/e58c628c-bf2f-4ee2-ae54-a9eff6a03f78" />
 
 <ins>After Stub</ins> 
 
-<img width="800" height="821" alt="Day 9 Stub" src="https://github.com/user-attachments/assets/5da5b7b7-a817-45ef-a8bb-53d2125c1a01" />
+<img width="500" height="300" alt="Day 9 Stub" src="https://github.com/user-attachments/assets/5da5b7b7-a817-45ef-a8bb-53d2125c1a01" />
 
 
 **2. Totally Stub (Type 3 and 5)**
@@ -954,11 +954,11 @@ The aging timer of LSAs is 39 mins
 
 <ins>Before Totally Stub</ins> 
 
-<img width="800" height="835" alt="Day 9 Original" src="https://github.com/user-attachments/assets/e58c628c-bf2f-4ee2-ae54-a9eff6a03f78" />
+<img width="500" height="300" alt="Day 9 Original" src="https://github.com/user-attachments/assets/e58c628c-bf2f-4ee2-ae54-a9eff6a03f78" />
 
 <ins>After Totally Stub</ins> 
 
-<img width="800" height="837" alt="Day 9 Totally Stub" src="https://github.com/user-attachments/assets/c2de1fc4-7d18-4d38-9225-ec87a565af0a" />
+<img width="500" height="300" alt="Day 9 Totally Stub" src="https://github.com/user-attachments/assets/c2de1fc4-7d18-4d38-9225-ec87a565af0a" />
 
 
 
@@ -979,23 +979,23 @@ The aging timer of LSAs is 39 mins
 
 <ins>Before NSSA</ins> 
 
-<img width="800" height="775" alt="Day 9 Org 1" src="https://github.com/user-attachments/assets/50592f1a-4b3f-43f1-8319-f2b45bb8c7ac" />
+<img width="800" height="300" alt="Day 9 Org 1" src="https://github.com/user-attachments/assets/50592f1a-4b3f-43f1-8319-f2b45bb8c7ac" />
 
 <ins>After NSSA</ins> 
 
-<img width="877" height="778" alt="Day 9 Nssa" src="https://github.com/user-attachments/assets/5b115587-0653-47f9-a74b-a1997faad70f" />
+<img width="877" height="300" alt="Day 9 Nssa" src="https://github.com/user-attachments/assets/5b115587-0653-47f9-a74b-a1997faad70f" />
 
 
 **4. Totally NSSA (Filter Type 3, and Change into Type 7 from Type 5)**
 
 <ins>Before Totally NSSA</ins>
 
-<img width="800" height="775" alt="Day 9 Org 1" src="https://github.com/user-attachments/assets/50592f1a-4b3f-43f1-8319-f2b45bb8c7ac" />
+<img width="800" height="300" alt="Day 9 Org 1" src="https://github.com/user-attachments/assets/50592f1a-4b3f-43f1-8319-f2b45bb8c7ac" />
 
 
 <ins>After Totally NSSA</ins> 
 
-<img width="847" height="786" alt="Day 9 Totally Nssa" src="https://github.com/user-attachments/assets/3b028006-5af7-47f4-9d6b-5895da01d1e4" />
+<img width="847" height="300" alt="Day 9 Totally Nssa" src="https://github.com/user-attachments/assets/3b028006-5af7-47f4-9d6b-5895da01d1e4" />
 
 
 ----------------------------------------
@@ -1009,7 +1009,7 @@ The aging timer of LSAs is 39 mins
 
 **OSPF Stub Area Configuring** 
 
-<img width="400" height="613" alt="image" src="https://github.com/user-attachments/assets/5876afb8-feff-4cde-8517-df3eba07c1f1" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/5876afb8-feff-4cde-8517-df3eba07c1f1" />
 
 `On all routers of Area 10`
 
@@ -1019,7 +1019,7 @@ The aging timer of LSAs is 39 mins
 
 **OSPF Totally Stub Area Configuring** 
 
-<img width="400" height="613" alt="image" src="https://github.com/user-attachments/assets/5876afb8-feff-4cde-8517-df3eba07c1f1" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/5876afb8-feff-4cde-8517-df3eba07c1f1" />
 
 All routers of Area excluding ABR (R1 / R2)
 
@@ -1035,7 +1035,7 @@ Only on ABR (R3)
 
 **OSPF NSSA Configuring** 
 
-<img width="400" height="716" alt="image" src="https://github.com/user-attachments/assets/83b649e9-2b8f-4803-b5df-60ce88601f7f" />
+<img width="400" height="300" alt="image" src="https://github.com/user-attachments/assets/83b649e9-2b8f-4803-b5df-60ce88601f7f" />
 
 
 All Internal routers (R1 / R2) 
@@ -1053,7 +1053,7 @@ On ABR (R3)
 
 **OSPF Totally NSSA Configuration**
 
-<img width="400" height="716" alt="image" src="https://github.com/user-attachments/assets/af7bf1b2-5c9e-4736-ab51-f4daf55afb4b" />
+<img width="400" height="400" alt="image" src="https://github.com/user-attachments/assets/af7bf1b2-5c9e-4736-ab51-f4daf55afb4b" />
 
 
 All Internal routers (R1 / R2) 
@@ -1110,7 +1110,7 @@ or
 
 **OSPF Virtual-link**
 
-<img width="600" height="630" alt="image" src="https://github.com/user-attachments/assets/2d16aebd-fbeb-4638-a900-13b4d6b4d798" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/2d16aebd-fbeb-4638-a900-13b4d6b4d798" />
 
 
 - Virtual links are used to connect a dis-contiguous area  to area 0
