@@ -519,7 +519,7 @@ For Interfaces between each router
 
 # Day 6/7/9 (OSPF)
 
-<img width="700" height="760" alt="image" src="https://github.com/user-attachments/assets/1006c76b-038b-42c7-8f0a-9b4b5609b449" />
+<img width="650" height="470" alt="image" src="https://github.com/user-attachments/assets/1006c76b-038b-42c7-8f0a-9b4b5609b449" />
 
 
 [Day 9 OSPF _ Stub - Totally Stub - NSSA - Totally NSSA EVE Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/27060046dbcdaa16051fb25ae9bc6717361fb1fc/Day%209%20OSPF%20_%20Stub%20-%20Totally%20Stub%20-%20NSSA%20-%20Totally%20NSSA.zip)
@@ -1148,7 +1148,7 @@ or
 - It is the processes of combining smaller networks in to single large sub network (Combining the contagious address into one and send to neighbor)
 - It helps in reducing the size of routing table 
 
-<img width="1000" height="631" alt="image" src="https://github.com/user-attachments/assets/bbe33608-29c9-4e19-9a5b-256a8b477355" />
+<img width="800" height="450" alt="image" src="https://github.com/user-attachments/assets/bbe33608-29c9-4e19-9a5b-256a8b477355" />
 
 **Download RIP / EIGRP / OSPF Route Summarization Lab (EVE Lab File)** 
 
@@ -1178,9 +1178,9 @@ or
 
 <img width="648" height="461" alt="image" src="https://github.com/user-attachments/assets/2d0dbd4e-29a2-435d-bc70-0ed99c9d5e1e" />
 
-<img width="1000" height="708" alt="image" src="https://github.com/user-attachments/assets/0acd1a44-8f48-42f2-81c1-553f79299144" />
+<img width="800" height="550" alt="image" src="https://github.com/user-attachments/assets/0acd1a44-8f48-42f2-81c1-553f79299144" />
 
-<img width="1000" height="822" alt="image" src="https://github.com/user-attachments/assets/fc37103f-f670-46b0-a4ba-c336f9254248" />
+<img width="800" height="550" alt="image" src="https://github.com/user-attachments/assets/fc37103f-f670-46b0-a4ba-c336f9254248" />
 
 <img width="790" height="506" alt="image" src="https://github.com/user-attachments/assets/e43e0dd2-2712-4564-b492-5426674fe74c" />
 
@@ -1498,11 +1498,11 @@ default interface (interface_name)
 
 `show etherchannel summary` 
 
-<img width="500" height="530" alt="image" src="https://github.com/user-attachments/assets/d03c0d6f-b0cd-4cd7-8f47-ecbc92827870" />
+<img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/d03c0d6f-b0cd-4cd7-8f47-ecbc92827870" />
 
-<img width="700" height="496" alt="image" src="https://github.com/user-attachments/assets/c45a0e0a-b482-4dae-9313-be23fea36698" />
+<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/c45a0e0a-b482-4dae-9313-be23fea36698" />
 
-<img width="700" height="550" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
+<img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
 
 `show interface port-channel (port_channel number)` 
 
@@ -1595,7 +1595,7 @@ default interface (interface_name)
 
 **Unicast Reverse Path Forwarding (uRPF)** 
 
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/b1a44a01-b7b0-43ae-9f22-27ddc54c5b73" />
+<img width="700" height="350" alt="image" src="https://github.com/user-attachments/assets/b1a44a01-b7b0-43ae-9f22-27ddc54c5b73" />
 
 - Normally when your router receives unicast IP packets it only cares about one thing : what is the destination IP address of this IP packet so I can forward it?
   
@@ -1609,21 +1609,21 @@ default interface (interface_name)
       
     - Do I use the same interface to reach this source as where I received this packet on?
    
-      <img width="700" height="800" alt="image" src="https://github.com/user-attachments/assets/c150b817-7eff-42b8-8bf4-28d7dfad6a57" />
+      <img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/c150b817-7eff-42b8-8bf4-28d7dfad6a57" />
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/ae5f2a09-50ef-4b94-b59a-382348621a21" />
+      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/ae5f2a09-50ef-4b94-b59a-382348621a21" />
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/dfb55664-f4b2-4e4a-9946-129b6e3068d5" />
+      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/dfb55664-f4b2-4e4a-9946-129b6e3068d5" />
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/61881fd0-d15f-4909-a163-68bf67290134" />
+      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/61881fd0-d15f-4909-a163-68bf67290134" />
 
       - And then we create loopback on R3 for spoofing and verifying
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/ca8546a4-37db-46fb-82e5-b011b86d35ad" />
+      <img width="700" height="150" alt="image" src="https://github.com/user-attachments/assets/ca8546a4-37db-46fb-82e5-b011b86d35ad" />
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/c9f65c67-f694-4150-b0a9-1e09016bc9f4" />
+      <img width="650" height="300" alt="image" src="https://github.com/user-attachments/assets/c9f65c67-f694-4150-b0a9-1e09016bc9f4" />
 
-      <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/a46ff273-be1e-40ae-a2de-7e3d0f43247d" />
+      <img width="650" height="300" alt="image" src="https://github.com/user-attachments/assets/a46ff273-be1e-40ae-a2de-7e3d0f43247d" />
 
 
    - **Loose mode** means that the router will perform only a single check when it receives an IP packet on an interface
@@ -1632,25 +1632,25 @@ default interface (interface_name)
 
      - When it passed this check, the packet is permitted. It doesn’t matter if we use this interface to reach the source or not. Loose mode is useful when you are connected to more than one ISP and you use **asymmetric routing**.
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/d3004876-9f5d-42a3-b1e4-186497635e8c" />
+     <img width="750" height="550" alt="image" src="https://github.com/user-attachments/assets/d3004876-9f5d-42a3-b1e4-186497635e8c" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/d52ba870-9030-4525-89d8-99a39fb11f68" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/d52ba870-9030-4525-89d8-99a39fb11f68" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/b4940bbf-933b-4bd6-93a5-c1b4bb930be1" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/b4940bbf-933b-4bd6-93a5-c1b4bb930be1" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/97ad7b93-ea08-4b5f-ad79-e1e7f05d172b" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/97ad7b93-ea08-4b5f-ad79-e1e7f05d172b" />
 
      - And then we create loopback on R3 for spoofing and verifying
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/7cc6e8e9-ca79-4d79-aec4-99a6b35fcca7" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/7cc6e8e9-ca79-4d79-aec4-99a6b35fcca7" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/f0403267-3672-4283-91d2-6b96db8962db" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/f0403267-3672-4283-91d2-6b96db8962db" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/aa40c97d-b982-47be-9c0a-fec2366acc15" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/aa40c97d-b982-47be-9c0a-fec2366acc15" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/46d903e2-79cd-4c6e-b8f8-84c707681f55" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/46d903e2-79cd-4c6e-b8f8-84c707681f55" />
 
-     <img width="700" height="300" alt="image" src="https://github.com/user-attachments/assets/5ada2632-842c-4e96-83a9-d77ea8012217" />
+     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/5ada2632-842c-4e96-83a9-d77ea8012217" />
 
 
 
