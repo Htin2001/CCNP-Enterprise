@@ -1749,7 +1749,7 @@ default interface (interface_name)
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
-# Day 16 (BGP) 
+# Day 16 / 17 (BGP) 
 
 **Border Gateway Protocol (BGP)**
 
@@ -1872,6 +1872,82 @@ Dual Multi-homing
   - Allows for selection of some paths with other falling back to a default route
 - All routes (full table)
   - Hard on resources, but guarantees the most direct path is taken
+
+
+**BGP neighbor states** 
+
+- **Idle (1)**: The initial state. BGP waits for a start event, such as a neighbor configuration or reset
+  
+- Connect (2) : BGP waits for the TCP three-way handshake to complete. If successful, it moves to OpenSent; if it fails, it moves to Active
+  
+- **Active (3)** : BGP is actively trying to initiate a TCP connection to the neighbor. If it fails, it returns to the Connect state. Persistent Active often means a routing,            firewall, or misconfiguration issue
+  
+- OpenSent (4) : The TCP connection is established, and an OPEN message has been sent, but the peer’s matching OPEN message has not yet been received
+  
+- OpenConfirm (5) : An OPEN message has been exchanged. BGP waits for a KEEPALIVE message to confirm the session
+  
+- Established (6) : The peering is fully operational. BGP peers can now exchange UPDATE messages (routes)
+
+**Common Troubleshooting States** 
+
+- Idle (Error) : Often caused by incorrect AS number, non-existent nexit-hop to the neighbor, or a bad interface
+  
+- Active (Error) : Often caused by misconfiguration neighbor IP address, passive-interface settings, or firewalls blocking TCP port 179
+
+**BGP Next Hop Behavior**
+
+- BGP is an AS-by-AS routing protocol, not a router-by-router routing protocol
+  
+- In BGP, the next hop doesn’t mean the next router, it means the IP address to reach the next AS
+  
+- When EBGP - EBGP neighbor (changes the next hop)
+  
+- When IBGP - IBGP neighbor (the next hop remains same) (unchanged)
+
+
+----------------------------------------
+
+
+**BGP Configuration** 
+
+<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/349b2d18-d6af-4933-930b-daf3b9dc6127" />
+
+**BGP Configuration**  
+
+>```
+> router bgp (AS_number)
+> neighbor (next_hop IP) remote-as (next_hop router's AS_number)
+> network (internal network)
+> " note that check prefix carefully for the internal network) " 
+>```
+
+**Next_hop_self Configuration** 
+
+>```
+> According to the diagram above.... 
+> R2 (config) # router bgp 500 
+> R2 (config-router) # neighbor 1.1.1.1 next-hop-self 
+> **Note that next-hop-self command is only applied the router which use EBGP neighbor but there is only IBGP neighbor within own AS
+>``` 
+
+
+**Verifying BGP Configuration** 
+
+>```
+> show ip bgp summary
+>
+> show ip bgp
+>
+> show tcp brief
+>```
+
+
+
+
+
+
+
+
 
 
 
