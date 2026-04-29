@@ -1627,6 +1627,7 @@ default interface (interface_name)
 
 
    - **Loose mode** means that the router will perform only a single check when it receives an IP packet on an interface
+ 
      
      - Do I have a matching entry for the source in the routing table ?
 
@@ -1685,7 +1686,7 @@ default interface (interface_name)
 **Reliable Static Route with IP SLA**
 
 
-<img width="800" height="600" alt="image" src="https://github.com/user-attachments/assets/dc89309d-3a01-47ec-bc30-7bf696ad2944" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/dc89309d-3a01-47ec-bc30-7bf696ad2944" />
 
 - IP SLA is a great tool on Cisco routers that allows us to generate traffic which can be used to check delay / latency, jitter but can also be combined with object tracking
 
@@ -1694,7 +1695,7 @@ default interface (interface_name)
 
 **Reliable PBR with IP SLA**
 
-<img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/435a21c6-f032-498f-b640-c5f2077e2738" />
+<img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/435a21c6-f032-498f-b640-c5f2077e2738" />
 
 - We’ll use PBR to overrule the routing table but only when our IP SLA operation is up and running 
 
