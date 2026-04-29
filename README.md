@@ -1772,16 +1772,15 @@ default interface (interface_name)
 
 - EGP → BGP → IBGP and EBGP
   
-- IGP has (Dynamic Auto or Dynamic Neighbor Discorvery) but EGP didn't. So it sends updates to manually defined neighbor as unicast which mean it needs to define it's neighbor bu        itself
+- **IGP has (Dynamic Auto or Dynamic Neighbor Discorvery) but EGP didn't. So it sends updates to manually defined neighbor as unicast which mean it needs to define it's neighbor bu        itself**
   
-- BGP is application layer protocol uses TCP for reliability, TCP port 179
+- BGP is application layer protocol uses TCP for reliability, **TCP port 179**
   
 - **Metric = Attributes (AS path)**
   
 - Administrative distance
     - 20 External updates (EBGP)
     - 200 Internal updates (IBGP)
-
 
 - An AS is a collection of networks under a single technical administration
   
@@ -1928,7 +1927,8 @@ Dual Multi-homing
 > According to the diagram above.... 
 > R2 (config) # router bgp 500 
 > R2 (config-router) # neighbor 1.1.1.1 next-hop-self 
-> **Note that next-hop-self command is only applied the router which use EBGP neighbor but there is only IBGP neighbor within own AS
+> **Note that next-hop-self command is only applied the router which
+> use EBGP neighbor but there is only IBGP neighbor within own AS**
 >``` 
 
 
