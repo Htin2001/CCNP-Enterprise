@@ -1451,7 +1451,7 @@ or
 **Checking Trunklink State** 
 
 > ```
->  show interface (interface_name) switchport 
+> show interface (interface_name) switchport 
 > 
 > or 
 > 
@@ -1522,7 +1522,9 @@ or
 **Verifying Etherchannel** 
 
 >```
->show etherchannel summary
+> show etherchannel summary
+>
+> show interface port-channel (port_channel number)
 >```
 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/d03c0d6f-b0cd-4cd7-8f47-ecbc92827870" />
@@ -1531,14 +1533,11 @@ or
 
 <img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
 
->```
->show interface port-channel (port_channel number)
->```
 
 **Viewing Etherchannel Neighbor** 
 
 >```
-> show etherchannel port` 
+> show etherchannel port
 >```
 
 
