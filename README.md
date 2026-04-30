@@ -1422,57 +1422,75 @@ or
 ----------------------------------------
 **VTP Configuration**
 
-`vtp version 1 or 2 or 3`
+>``` 
+> vtp version 1 or 2 or 3
+>``` 
 
 - Numbers should be same for all switches
 
-`vtp domain (name)`
-
-`vtp mode server / client / transparent`
-
-`vtp password (password)`
+>```
+> vtp domain (name)
+>
+> vtp mode server / client / transparent
+>
+> vtp password (password)
+> ```
 
 **VTP Primary Configuration** 
 
-`SW1# vtp primary` 
+>``` 
+> SW1# vtp primary
+>```
 
 **Verifying VTP** 
 
-`show vtp status` 
+>```
+> show vtp status
+>``` 
 
 **Checking Trunklink State** 
 
-`show interface (interface_name) switchport` 
-
-or 
-
-`show interface trunk` 
+> ```
+>  show interface (interface_name) switchport 
+> 
+> or 
+> 
+> show interface trunk
+> ```
 
 **Configuration Etherchannel**
 
-`int (interface_name)` 
-
-`channel-group (number) mode (LACP or PAGP)`
-
-`interface port-channel (channel_group number)` 
-
-`switchport mode trunk`
+>```
+> int (interface_name)
+> 
+> channel-group (number) mode (LACP or PAGP)
+> 
+> interface port-channel (channel_group number) 
+> 
+> switchport mode trunk
+> ```
 
 **Configure the minimum links** 
 
-`port-channel min-links (number)` 
+>```
+>port-channel min-links (number)
+>```
 
 **Configure the max links**
 
-`lacp max-bundle (number)` 
+>```
+> lacp max-bundle (number)
+>```
 
 **LACP System Priority**
 
 - The LACP system priority identifies which switch is the primary switch for an Etherchannel. The switch with the lowest system priority is preferred.
 
-`lacp system-priority (number)`
-
-`show lacp sys-id`
+>```
+>lacp system-priority (number)
+>
+>show lacp sys-id
+>```
 
 **LACP Interface Priority**
 
@@ -1480,7 +1498,9 @@ or
 
 - A port with a lower port priority is preferred. The small numbers will work properly.
 
-`SW1 (config-if) # lacp port-priority 1` 
+>```
+> SW1 (config-if) # lacp port-priority 1
+>``` 
 
 **Making LACP Fast** 
 
@@ -1488,15 +1508,22 @@ or
 
 - Fast Hello = 1 sec Hold 3 sec 
 
-`SW1 (config-if-range) # lacp rate fast`
+>```
+> SW1 (config-if-range) # lacp rate fast
+>```
 
 **Making Port as a default** 
 
-default interface (interface_name)
+> ```
+> default interface (interface_name)
+> ```
+
 
 **Verifying Etherchannel** 
 
-`show etherchannel summary` 
+>```
+>show etherchannel summary
+>```
 
 <img width="500" height="400" alt="image" src="https://github.com/user-attachments/assets/d03c0d6f-b0cd-4cd7-8f47-ecbc92827870" />
 
@@ -1504,28 +1531,38 @@ default interface (interface_name)
 
 <img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/06e71dfd-229a-4e58-902b-ad4b7e2c521c" />
 
-`show interface port-channel (port_channel number)` 
+>```
+>show interface port-channel (port_channel number)
+>```
 
 **Viewing Etherchannel Neighbor** 
 
-` show etherchannel port` 
+>```
+> show etherchannel port` 
+>```
+
 
 **Viewing LACP / PAGP Neighbor** 
 
-`show lacp / pagp neighbor`
-
-`show lacp / pagp neighbor detail` 
+>```
+> show lacp / pagp neighbor
+>
+> show lacp / pagp neighbor detail
+>```
 
 **Viewing System-id**
 
-`show lacp sys-id` 
+>```
+> show lacp sys-id
+>``` 
 
 **Verify Etherchannel packets** 
 
-`show lacp / pagp counters`
-
-`clear lacp / pagp counters` 
-
+> ```
+> show lacp / pagp counters
+>
+> clear lacp / pagp counters
+>``` 
 
 # Day 13 (IS-IS) 
 
@@ -1601,29 +1638,17 @@ default interface (interface_name)
   
 - uRPF is a security feature that prevents these spoofing attacks. Whenever your router receives an IP packet it will check if it has a matching entry in the routing table for the       source IP address. If it doesn’t match, the packet will be discarded. uRPF has two modes:
 
-  - **Strict mode** means that that router will perform two checks for all incoming packets on a certain interface:
+  - **Strict mode** means that that router will perform **two checks** for all incoming packets on a certain interface:
  
-    <img width="475" height="135" alt="image" src="https://github.com/user-attachments/assets/ba3323df-ef54-4d6a-8129-d979fd582afb" />
-    
     - Do I have a matching entry for the source in the routing table?
       
     - Do I use the same interface to reach this source as where I received this packet on?
-   
-      <img width="600" height="350" alt="image" src="https://github.com/user-attachments/assets/c150b817-7eff-42b8-8bf4-28d7dfad6a57" />
+ 
+    <img width="475" height="135" alt="image" src="https://github.com/user-attachments/assets/ba3323df-ef54-4d6a-8129-d979fd582afb" />
+    
+    <img width="575" height="438" alt="image" src="https://github.com/user-attachments/assets/7da5b73d-a145-4357-b313-51337a226e50" />
 
-      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/ae5f2a09-50ef-4b94-b59a-382348621a21" />
-
-      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/dfb55664-f4b2-4e4a-9946-129b6e3068d5" />
-
-      <img width="650" height="350" alt="image" src="https://github.com/user-attachments/assets/61881fd0-d15f-4909-a163-68bf67290134" />
-
-      - And then we create loopback on R3 for spoofing and verifying
-
-      <img width="700" height="150" alt="image" src="https://github.com/user-attachments/assets/ca8546a4-37db-46fb-82e5-b011b86d35ad" />
-
-      <img width="650" height="300" alt="image" src="https://github.com/user-attachments/assets/c9f65c67-f694-4150-b0a9-1e09016bc9f4" />
-
-      <img width="650" height="300" alt="image" src="https://github.com/user-attachments/assets/a46ff273-be1e-40ae-a2de-7e3d0f43247d" />
+    <img width="586" height="738" alt="image" src="https://github.com/user-attachments/assets/a2daeb15-6da2-4836-a68c-c4ec450fe70f" />
 
 
    - **Loose mode** means that the router will perform only a single check when it receives an IP packet on an interface
@@ -1633,26 +1658,11 @@ default interface (interface_name)
 
      - When it passed this check, the packet is permitted. It doesn’t matter if we use this interface to reach the source or not. Loose mode is useful when you are connected to more than one ISP and you use **asymmetric routing**.
 
-     <img width="750" height="550" alt="image" src="https://github.com/user-attachments/assets/d3004876-9f5d-42a3-b1e4-186497635e8c" />
+    <img width="585" height="586" alt="image" src="https://github.com/user-attachments/assets/e1ff1cf5-9368-48eb-b9ab-866d5f2900ad" />
 
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/d52ba870-9030-4525-89d8-99a39fb11f68" />
+    <img width="592" height="661" alt="image" src="https://github.com/user-attachments/assets/32cea1df-9111-45ee-9dac-35b1bc3fe968" />
 
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/b4940bbf-933b-4bd6-93a5-c1b4bb930be1" />
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/97ad7b93-ea08-4b5f-ad79-e1e7f05d172b" />
-
-     - And then we create loopback on R3 for spoofing and verifying
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/7cc6e8e9-ca79-4d79-aec4-99a6b35fcca7" />
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/f0403267-3672-4283-91d2-6b96db8962db" />
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/aa40c97d-b982-47be-9c0a-fec2366acc15" />
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/46d903e2-79cd-4c6e-b8f8-84c707681f55" />
-
-     <img width="750" height="300" alt="image" src="https://github.com/user-attachments/assets/5ada2632-842c-4e96-83a9-d77ea8012217" />
-
+    <img width="600" height="470" alt="image" src="https://github.com/user-attachments/assets/c1cc0c19-3713-4f67-b93c-cbcb348947e0" />
 
 
 ## Day 15 (IP SLA)
