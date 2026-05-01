@@ -1926,8 +1926,9 @@ Dual Multi-homing
 >```
 > router bgp (AS_number)
 > neighbor (next_hop IP) remote-as (next_hop router's AS_number)
-> network (internal network)
-> " note that check prefix carefully for the internal network) " 
+> network (internal network + subnetmask) 
+> " note that check prefix carefully for the internal network & if the internal network is classless
+>   like /30 the it needs to declare that network ( x.x.x.x subnetmask[255.255.255.252] )  " 
 >```
 
 **Next_hop_self Configuration** 
