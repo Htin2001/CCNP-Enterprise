@@ -1903,7 +1903,7 @@ Dual Multi-homing
   
 - Active (Error) : Often caused by misconfiguration neighbor IP address, passive-interface settings, or firewalls blocking TCP port 179
 
-**BGP Next Hop Behavior**
+**BGP Next Hop Behavior (When IBGP + EBGP)**
 
 - BGP is an AS-by-AS routing protocol, not a router-by-router routing protocol
   
@@ -1919,7 +1919,7 @@ Dual Multi-homing
 
 **BGP Configuration** 
 
-<img width="600" height="300" alt="image" src="https://github.com/user-attachments/assets/349b2d18-d6af-4933-930b-daf3b9dc6127" />
+<img width="700" height="450" alt="image" src="https://github.com/user-attachments/assets/349b2d18-d6af-4933-930b-daf3b9dc6127" />
 
 **BGP Configuration**  
 
