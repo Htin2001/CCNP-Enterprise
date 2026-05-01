@@ -1926,7 +1926,7 @@ Dual Multi-homing
 >```
 > router bgp (AS_number)
 > neighbor (next_hop IP) remote-as (next_hop router's AS_number)
-> network (internal network + subnetmask) 
+> network (internal network) mask (subnetmask) 
 > " note that check prefix carefully for the internal network & if the internal network is classless
 >   like /30 the it needs to declare that network ( x.x.x.x subnetmask[255.255.255.252] )  " 
 >```
@@ -1936,20 +1936,20 @@ Dual Multi-homing
 >```
 > According to the diagram above.... 
 > R2 (config) # router bgp 500 
-> R2 (config-router) # neighbor 1.1.1.1 next-hop-self 
+> R2 (config-router) # neighbor 1.1.1.1(IBGP Neighbor's IP) next-hop-self 
 > **Note that next-hop-self command is only applied the router which
-> use EBGP neighbor but there is only IBGP neighbor within own AS**
+> use EBGP neighbor when there has only IBGP neighbor within own AS**
 >``` 
 
 
 **Verifying BGP Configuration** 
 
 >```
+> show tcp brief
+>
 > show ip bgp summary
 >
 > show ip bgp
->
-> show tcp brief
 >```
 
 
