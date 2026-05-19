@@ -1914,6 +1914,19 @@ Dual Multi-homing
 - When IBGP - IBGP neighbor (the next hop remains same) (unchanged)
 
 
+**IBGP Split Horizontal Rule** 
+
+
+
+- An update send by one IBGP neighbor should not be send back to another IBGP neighbor
+  
+- Prevents Routing Loops within an same AS
+
+
+
+
+
+
 ----------------------------------------
 
 
