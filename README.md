@@ -1759,7 +1759,7 @@ or
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
-# Day 16 / 17 (BGP) 
+# Day 16 / 17 / 18 (BGP) 
 
 **Border Gateway Protocol (BGP)**
 
@@ -1924,7 +1924,7 @@ Dual Multi-homing
 
 **Solution for IBGP Split Horizontal Rule** 
 
-- Full Mesh Neighborship (IBGP + IGP (OSPF or EIGRP or ISIS....))
+- **Full Mesh Neighborship with Physical Interface**(IBGP + IGP (OSPF or EIGRP or ISIS....))
 
   <img width="933" height="466" alt="image" src="https://github.com/user-attachments/assets/99ab3fac-b8aa-4931-8009-34fde362e591" />
 
@@ -1937,8 +1937,46 @@ Dual Multi-homing
     > R1 (config-router) # neighbor 2.2.2.2 remote-as 500
     > R3 (config-router) # neighbor 1.1.1.1 remote-as 500
     > ``` 
+
+  IBGP Configuration Guide
+
+  - IP Addressing
+ 
+  - BGP Neighbor (2 Neighbor per router)
+ 
+  - IGP (EIGRP advertise router to router network)
+ 
+  - Full mesh neighbor Physical Interface Network (1 neighbor extra per router)
+   
+- **Full Mesh Neighborship with Lookback**
+
+  Issues with IBGP peering using Loopbacks
+
+  - **Loopbacks must be Reachable**
+    
+    - to send unicast BGP open messages
+    - Advertise Loopback interface inside IGP (OSPF / EIGRP / RIP)
       
-- Route Reflector Client 
+  - **Problem with Source**
+    
+    - Default Source will be exit interface
+    - Change source address to loopback address
+   
+  <img width="969" height="536" alt="image" src="https://github.com/user-attachments/assets/598c019d-1cd5-44c0-a1c9-9931463e630b" />
+
+    > ```
+    > Configure on R1
+    > R1 (config) # router bgp 500
+    > R1 (config-router) # neighbor 12.0.0.1 remote-as 500
+    > R1 (config-router) # neighbor 12.0.0.1 update-source lo 0 
+    > R1 (config-router) # neighbor 13.0.0.1 remote-as 500
+    > R1 (config-router) # neighbor 13.0.0.1 update-source lo 0 
+    > R1 (config-router) # neighbor 14.0.0.1 remote-as 500
+    > R1 (config-router) # neighbor 14.0.0.1 update-source lo 0
+    > R1 (config-router) # network 10.1.1.0 mask 255.255.255.0
+    > ``` 
+
+- **Route Reflector Client**
 
 
 
