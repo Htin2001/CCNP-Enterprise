@@ -1916,14 +1916,29 @@ Dual Multi-homing
 
 **IBGP Split Horizontal Rule** 
 
-
+<img width="452" height="182" alt="image" src="https://github.com/user-attachments/assets/72f996d3-9794-42fd-9d5f-ab7cf5ab8475" />
 
 - An update send by one IBGP neighbor should not be send back to another IBGP neighbor
   
 - Prevents Routing Loops within an same AS
 
+**Solution for IBGP Split Horizontal Rule** 
 
+- Full Mesh Neighborship (IBGP + IGP (OSPF or EIGRP or ISIS....))
 
+  <img width="933" height="466" alt="image" src="https://github.com/user-attachments/assets/99ab3fac-b8aa-4931-8009-34fde362e591" />
+
+    - Every router should be a neighbor of every other router within the AS 
+ 
+    - According to the diagram, one thing noted that we need to run IGP to fix the split horizontal rule. After running the IGP, we need to be check carefully when making a neighbor         of every router within the AS.
+ 
+    > ```
+    > As an example
+    > R1 (config-router) # neighbor 2.2.2.2 remote-as 500
+    > R3 (config-router) # neighbor 1.1.1.1 remote-as 500
+    > ``` 
+      
+- Route Reflector Client 
 
 
 
