@@ -1797,6 +1797,75 @@ or
   
 - Exchange of loop-free routing information is guaranteed
 
+**BGP Attributes** 
+
+- BGP chooses a route to a network based on the attributes of its path
+ 
+- **Well-known mandatory:**
+
+    - Must be recognized by all BGP routers, present in all BGP updates, and passed on to other BGP routers
+      
+        - AS path
+          - Path with shortest AS path list is more desirable 
+        - Origin attribute
+            - Origin informs all AS in Internetwork how network got introduced into BGP.
+            - IGP (i) - advertised in BGP using network command / EGP (e) - Redistributed from EGP / Incomplete (?) - Redistributed in to BGP from IGP or static.
+            - Well-known, mandatory, and transitive. ‘i’ is better then ‘E’. ‘e’ is better then ‘?’
+        - And next hop attribute
+          - well-known, mandatory attribute, BGP is AS by AS routing protocol, next-hop is not next router, next-hop is IP to reach next AS 
+
+- **Well-known discretionary:**
+  
+    - Must be recognized by all BGP routers and passed on to other BGP routers but need not to be present in an update
+        - Local preference or
+        - Weight attribute
+            - Weight is Cisco’s attribute
+            - Tells how to exit the AS
+            - Path with the highest weight is more desirable
+            - Weight is partial attribute
+            - Default weight =
+            - 0 = learned routes (external routes)
+            - 32,768 = for locally injected routes
+            - Local to the router (not advertise to the other routers in the AS)
+             
+- **Optional transitive:**
+  
+    - Might or might not be recognized by a BGP router but is passed on to other BGP routers
+    - If not recognized, it is marked as partial
+    - Aggregator, community
+
+- **Optional non-transitive**
+
+    - If the BGP process does not recognize the attribute then it can ignore the update and not advertise the path to its peers
+    - Multi-Exit Discriminator (MED), originator ID
+
+
+**BGP Path Attributes** 
+
+Consider only (synchronized) routes with no AS loops and a valid next hop, and then:
+
+1. Prefer highest weight (local to router).
+2. Prefer highest local preference (global within AS).
+3. Prefer route originated by the local router (next hop = 0.0.0.0).
+4. Prefer shortest AS path.
+5. Prefer lowest origin code (IGP < EGP < incomplete) i > E > ?
+6. Prefer lowest MED (exchanged between autonomous systems).
+7. Neighbor Type (Prefer eBGP over iBGP)
+8. IGP metric to NEXT_HOP (Smaller value preferred)
+9. Prefer oldest route for EBGP paths.
+10. Prefer the path with the lowest neighbor BGP router ID.
+11. Prefer the path with the lowest neighbor IP address.
+
+
+**Weight Attribute and Local Preference Attribute**
+
+- Local preference defines how data traffic should exit from an AS
+- Path with highest preference is more desirable
+- Default value is 100
+- Local preference is well known, discretionary attribute
+- It is advertised only to IBGP neighbor within an AS
+
+
 **When to use BGP**
 
 - A.S. working as transit A.S. (Ex. ISP)
@@ -2017,6 +2086,61 @@ Dual Multi-homing
 >
 > show ip bgp
 >```
+
+
+
+**Configure the best route using Weight** 
+
+<img width="680" height="372" alt="image" src="https://github.com/user-attachments/assets/26afbc3c-b23c-40f9-9359-b9f8ff074294" />
+
+
+> ```
+> R1 (config) # router bgp 500 
+> R1 (config-router) # neighbor 4.4.4.1 weight (number) 
+> R1 (config-router) # end 
+> --------------------------------------------------------------------------
+> Configure the best Route using Weight & Route-Map
+> 
+> R1 (config) # access-list (number) permit (network_ip) (wildcard mask)
+> —----------
+> R1 (config) # route-map (name) permit (sequence_number) 
+> R1 (config-route-map) # match ip address (access_list number) 
+> R1 (config-route-map) # set weight (number)
+> R1 (config-route-map) # end
+> —----------
+> R1 (config) # route-map (name) permit (sequence_number)
+> R1 (config-route-map)  # end
+> —----------
+> R1 (config) # router bgp (bgp number)
+> R1 (config-router) # neighbor (next-hop’s ip) route-map (route-map’s name) in
+> R1 (config-router) # end
+
+
+**Configure the best Route using local preference**
+
+>```
+> R1 (config) # router bgp 500
+>
+> R1 (config-router) # bgp default local-preference (number)
+>``` 
+
+**Reseting the BGP Configs** 
+
+>```
+> Hard reset (Clear ip bgp *)
+> or 
+> Soft reset (Clear ip bgp * soft)
+>``` 
+
+
+
+
+
+
+
+
+
+
 
 
 
