@@ -2024,7 +2024,7 @@ Dual Multi-homing
   - **Loopbacks must be Reachable**
     
     - to send unicast BGP open messages
-    - Advertise Loopback interface inside IGP (OSPF / EIGRP / RIP)
+    - **Advertise Loopback interface inside IGP (OSPF / EIGRP / RIP)**
       
   - **Problem with Source**
     
