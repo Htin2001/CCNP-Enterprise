@@ -1759,7 +1759,7 @@ or
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
-# Day 16 / 17 / 18 (BGP) 
+# Day 16 / 17 / 18 / 20 (BGP) 
 
 **Border Gateway Protocol (BGP)**
 
