@@ -1875,6 +1875,9 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
 
 ## AS-Path Prepending (Controlling directions which right to return)
 
+<img width="986" height="733" alt="image" src="https://github.com/user-attachments/assets/841c36d4-9940-4250-a894-5c8589d76356" />
+
+
 - Manual manipulation of AS-path length is called AS-path Prepending
 - The AS path should be extended with multiple copies of the AS number of the sender
 - AS-path Prepending is used to :
