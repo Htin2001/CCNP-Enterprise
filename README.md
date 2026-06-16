@@ -1877,6 +1877,9 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
 
 <img width="986" height="733" alt="image" src="https://github.com/user-attachments/assets/841c36d4-9940-4250-a894-5c8589d76356" />
 
+**Download AS-Path Prepending Lab File (EVE)** 
+
+[AS-Path Prepending Lab File](https://github.com/Htin2001/CCNP-Enterprise/blob/8352f85955cf79e539c1ab0efa9332f10c70a183/Day%2021%20AS-Path%20Prepending%20Lab.zip)
 
 - Manual manipulation of AS-path length is called AS-path Prepending
 - The AS path should be extended with multiple copies of the AS number of the sender
