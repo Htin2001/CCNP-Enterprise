@@ -1761,7 +1761,7 @@ or
 
 # Day 16 / 17 / 18 / 20 (BGP) 
 
-**Border Gateway Protocol (BGP)**
+## Border Gateway Protocol (BGP)
 
 <img width="800" height="400" alt="image" src="https://github.com/user-attachments/assets/157f748d-a41e-4102-8edd-5040d1ee67e9" />
 
@@ -1797,11 +1797,11 @@ or
   
 - Exchange of loop-free routing information is guaranteed
 
-**BGP Attributes** 
+## BGP Attributes 
 
 - BGP chooses a route to a network based on the attributes of its path
  
-- **Well-known mandatory:**
+1. **Well-known mandatory:**
 
     - Must be recognized by all BGP routers, present in all BGP updates, and passed on to other BGP routers
       
@@ -1814,7 +1814,7 @@ or
         - And next hop attribute
           - well-known, mandatory attribute, BGP is AS by AS routing protocol, next-hop is not next router, next-hop is IP to reach next AS 
 
-- **Well-known discretionary:**
+  2. **Well-known discretionary:**
   
     - Must be recognized by all BGP routers and passed on to other BGP routers but need not to be present in an update
         - Local preference or
@@ -1828,19 +1828,19 @@ or
             - 32,768 = for locally injected routes
             - Local to the router (not advertise to the other routers in the AS)
              
-- **Optional transitive:**
+3. **Optional transitive:**
   
     - Might or might not be recognized by a BGP router but is passed on to other BGP routers
     - If not recognized, it is marked as partial
     - Aggregator, community
 
-- **Optional non-transitive**
+4. **Optional non-transitive**
 
     - If the BGP process does not recognize the attribute then it can ignore the update and not advertise the path to its peers
     - Multi-Exit Discriminator (MED), originator ID
 
 
-**BGP Path Attributes** 
+## BGP Path Attributes 
 
 Consider only (synchronized) routes with no AS loops and a valid next hop, and then:
 
@@ -1856,8 +1856,16 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
 10. Prefer the path with the lowest neighbor BGP router ID.
 11. Prefer the path with the lowest neighbor IP address.
 
+## Short Notes to memorize BGP path selection process 
 
-**Weight Attribute and Local Preference Attribute**
+- N - Valid Next Hop
+  
+- WLLA - Weight, Local Preference, local Route, As Path
+  
+- OMNI - Origin, MED, neighbor type (EBGP over IBGP), IGP metric to next-hop
+
+
+## Weight Attribute and Local Preference Attribute (Controlling directions which right to exit from own AS)
 
 - Local preference defines how data traffic should exit from an AS
 - Path with highest preference is more desirable
@@ -1865,20 +1873,29 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
 - Local preference is well known, discretionary attribute
 - It is advertised only to IBGP neighbor within an AS
 
+## AS-Path Prepending (Controlling directions which right to return)
 
-**When to use BGP**
+- Manual manipulation of AS-path length is called AS-path Prepending
+- The AS path should be extended with multiple copies of the AS number of the sender
+- AS-path Prepending is used to :
+    - Ensure proper return path selection
+    - Distribute the return traffic load for multi-homed customers
+- Results of AS-path Prepending can be observed on the receiving router
+
+
+## When to use BGP
 
 - A.S. working as transit A.S. (Ex. ISP)
 - A.S. connected to multiple A.S (when the AS is multi-homed) data traffic path entering or leaving A.S. need to manipulated
 
-**When not to use BGP**
+## When not to use BGP 
 
 - If it is Single-home A.S
 - Lack of resources like memory and less processing power in routers
 - Limited understanding about BGP route filtering and path selection processes
 
 
-**BGP Neighbors** 
+## BGP Neighbors
 
 - BGP neighbors are routers forming TCP connection for exchanging BGP updates
 - Also called as BGP Peers or BGP Speakers
@@ -1886,7 +1903,7 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
     - IBGP (Internal BGP)
     - EBGP (External BGP)
 
-**BGP Databases and BGP Tables** 
+## BGP Databases and BGP Tables
 
 Neighbor table 
 
@@ -1897,11 +1914,11 @@ BGP forwarding table/database
 
 - A list of networks known by BGP, along with their paths and attributes
 
-**BGP’s loop prevention mechanism** 
+## BGP’s loop prevention mechanism 
 
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/5661de97-c8c3-40ec-ba9f-5daa54f35342" />
 
-**Type of ISP Connections**
+## Type of ISP Connections
 
 Single Home 
 
@@ -1940,7 +1957,7 @@ Dual Multi-homing
 - BGP is used with the ISPs and can be used internally also
 
 
-**Connecting to the Internet with BGP Route reception options** 
+## Connecting to the Internet with BGP Route reception options 
 
 <img width="700" height="500" alt="image" src="https://github.com/user-attachments/assets/b6cacd54-e4a3-4471-bf57-23eb38b561ea" />
 
@@ -1952,7 +1969,7 @@ Dual Multi-homing
   - Hard on resources, but guarantees the most direct path is taken
 
 
-**BGP neighbor states** 
+## BGP neighbor states 
 
 - **Idle (1)**: The initial state. BGP waits for a start event, such as a neighbor configuration or reset
   
@@ -1966,13 +1983,13 @@ Dual Multi-homing
   
 - Established (6) : The peering is fully operational. BGP peers can now exchange UPDATE messages (routes)
 
-**Common Troubleshooting States** 
+## Common Troubleshooting States 
 
 - Idle (Error) : Often caused by incorrect AS number, non-existent nexit-hop to the neighbor, or a bad interface
   
 - Active (Error) : Often caused by misconfiguration neighbor IP address, passive-interface settings, or firewalls blocking TCP port 179
 
-**BGP Next Hop Behavior (When IBGP + EBGP)**
+## BGP Next Hop Behavior (When IBGP + EBGP) 
 
 - BGP is an AS-by-AS routing protocol, not a router-by-router routing protocol
   
@@ -1983,7 +2000,7 @@ Dual Multi-homing
 - When IBGP - IBGP neighbor (the next hop remains same) (unchanged)
 
 
-**IBGP Split Horizontal Rule** 
+## IBGP Split Horizontal Rule 
 
 <img width="452" height="182" alt="image" src="https://github.com/user-attachments/assets/72f996d3-9794-42fd-9d5f-ab7cf5ab8475" />
 
@@ -1991,7 +2008,7 @@ Dual Multi-homing
   
 - Prevents Routing Loops within an same AS
 
-**Solution for IBGP Split Horizontal Rule** 
+## Solution for IBGP Split Horizontal Rule 
 
 - **Full Mesh Neighborship with Physical Interface**(IBGP + IGP (OSPF or EIGRP or ISIS....))
 
@@ -2077,18 +2094,6 @@ Dual Multi-homing
 >``` 
 
 
-**Verifying BGP Configuration** 
-
->```
-> show tcp brief
->
-> show ip bgp summary
->
-> show ip bgp
->```
-
-
-
 **Configure the best route using Weight** 
 
 <img width="680" height="372" alt="image" src="https://github.com/user-attachments/assets/26afbc3c-b23c-40f9-9359-b9f8ff074294" />
@@ -2123,6 +2128,62 @@ Dual Multi-homing
 >
 > R1 (config-router) # bgp default local-preference (number)
 >``` 
+
+**Changing inbound Traffic using AS-path Prepend (pg.131)**
+
+- Configure AS 500 to ensure that the traffic from 30.0.0.0 to 10.0.0.0 (return traffic)
+- Should use the same path as forwarding traffic (R1-R2-R3)
+
+<img width="623" height="525" alt="image" src="https://github.com/user-attachments/assets/8284afd9-52df-4538-83f7-45a11164aa7e" />
+
+>```
+> Configruation of outbound traffic first 
+>
+> R1 (config) # access-list 1 permit 30.0.0.0 0.255.255.255
+>
+> R1 (config) # route-map (CCIER1) permit (10)
+> R1 (config-route-map) # match ip address 1
+> R1 (config-route-map) # set local-preference 250
+>
+> R1 (config-route-map) # route-map (CCIER1) permit (20)
+> R1 (config-route-map) # exit
+>
+> R1 (config) # router bgp 500
+> R1 (config-router) # neighbor 1.1.1.2 route-map CCIER1 in
+> R1 (config-router) # end 
+> ```
+
+>``` 
+> Configuration of AS-path prepending
+>
+> R4 (config) # access-list (1) permit (10.0.0.0) (0.255.255.255)
+> —---------------------------------------
+> R4 (config) # route-map (CCIE) permit (10) 
+> R4 (config-route-map) # match ip address (1) 
+> R4 (config-route-map) # set as-path prepend 500 500 500 500 (should be same as) 
+> R4 (config-route-map) # end 
+> —---------------------------------------- 
+> R4 (config) # route-map (CCIE) permit (20) 
+> R4 (config-route-map)  # end 
+> —---------------------------------------- 
+> R4 (config) # router bgp (bgp number) 
+> R4 (config-router) # neighbor (3.3.3.1) route-map (CCIE) (out)
+> R4 (config-router) # end 
+> —----------------------------------------
+> Verifying 
+> R3# sh ip bgp 10.0.0.0
+> ``` 
+
+**Verifying BGP Configuration** 
+
+>```
+> show tcp brief
+>
+> show ip bgp summary
+>
+> show ip bgp
+>```
+
 
 **Reseting the BGP Configs** 
 
