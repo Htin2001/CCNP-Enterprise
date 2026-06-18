@@ -1759,7 +1759,7 @@ or
 <img width="700" height="400" alt="image" src="https://github.com/user-attachments/assets/cd3020ae-bd2e-4aaf-af72-7116857b29d0" />
 
 
-# Day 16 / 17 / 18 / 20 (BGP) 
+# Day 16 / 17 / 18 / 20 / 21 (BGP) 
 
 ## Border Gateway Protocol (BGP)
 
@@ -1888,6 +1888,19 @@ Consider only (synchronized) routes with no AS loops and a valid next hop, and t
     - Distribute the return traffic load for multi-homed customers
 - Results of AS-path Prepending can be observed on the receiving router
 
+
+## MED (Multi Exit Discriminator) (pg.138) 
+
+<img width="649" height="493" alt="image" src="https://github.com/user-attachments/assets/e8dd6416-63b3-44d9-895a-2baf8b729c24" />
+
+- MED is optional and non transitive
+- MED define how the data traffic should enter an AS
+- MED is used to advertise to **EBGP neighbor** only
+- The default value of the MED attribute is 0
+- The MED is called the “metric” in Cisco IOS software
+- **A lower MED value means more preferred**
+- The MED is not propagated outside of a receiving AS
+- An AS can specify its preferred entry point using the MED in outgoing EBGP updates
 
 ## When to use BGP
 
@@ -2179,6 +2192,11 @@ Dual Multi-homing
 > Verifying 
 > R3# sh ip bgp 10.0.0.0
 > ``` 
+
+**Configuration inbound Traffic using MED**
+
+<img width="805" height="489" alt="image" src="https://github.com/user-attachments/assets/8fcea99c-3bf4-4dd2-8c67-f1055ac5f87c" />
+
 
 **Verifying BGP Configuration** 
 
