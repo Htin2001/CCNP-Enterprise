@@ -546,7 +546,7 @@ For Interfaces between each router
     
       - **Noted that if there are two fastethernet and gigabitethernet, we need to config Reference BW in interface in OSPF**
     
-- Administrative distance = 10
+- Administrative distance = 110
 - Load balancing via 4 equal cost paths by default (unequal cost load balancing not supported)
 - Hierarchical network design using Areas
 - Using RTP (Reliable Transport Protocol : 89)
